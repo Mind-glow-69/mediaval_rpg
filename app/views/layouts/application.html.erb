@@ -18,6 +18,13 @@
   </head>
 
   <body>
+    <% if Rails.env.development? %>
+      <div class="p-3 bg-gray-900 text-white text-sm flex gap-4 border-b border-white/10">
+        <%= link_to 'Mockups', dev_mockups_path, class: 'hover:underline' %>
+        <%= link_to 'GM Dashboard', gm_dashboard_path, class: 'hover:underline' %>
+        <%= link_to 'GM Quests', gm_quests_path, class: 'hover:underline' %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

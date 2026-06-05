@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_02_142327) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_02_143000) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "slot"
@@ -20,6 +20,12 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_02_142327) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_type"
+    t.string "rarity"
+    t.integer "price"
+    t.json "stats"
+    t.json "modifiers"
+    t.text "description"
   end
 
   create_table "quest_rewards", force: :cascade do |t|

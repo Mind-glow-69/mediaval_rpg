@@ -1,7 +1,7 @@
 class Riddle < ApplicationRecord
   belongs_to :step
 
-  serialize :answers, JSON
+  serialize :answers, coder: JSON
 
   validates :step, presence: true
   validates :question, presence: true

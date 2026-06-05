@@ -34,7 +34,6 @@ catalog.fetch("items", []).each do |item_data|
 		price: item_data["price"],
 		stats: attributes,
 		modifiers: item_data["modifiers"],
-		asset: item_data["asset"],
 		description: item_data["flavor_text"]
 	)
 	item.save!

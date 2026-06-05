@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  if Rails.env.development?
+    root to: redirect('/dev/mockups')
+  end
+  root to: redirect('/gm/dashboard') unless Rails.env.development?
   
   namespace :gm do
     get 'login', to: 'sessions#new'
@@ -44,6 +46,13 @@ Rails.application.routes.draw do
         post 'backgrounds', to: 'assets#upload_background'
         delete 'backgrounds/:id', to: 'assets#destroy_background', as: :destroy_background
       end
+    end
+  end
+
+  if Rails.env.development?
+    namespace :dev do
+      get 'mockups', to: 'mockups#index'
+      get 'mockups/*name', to: 'mockups#show', as: 'mockup', format: false
     end
   end
 end
