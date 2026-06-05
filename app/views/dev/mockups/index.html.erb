@@ -1,0 +1,11 @@
+<div class="p-8">
+  <h1 class="text-2xl font-bold mb-4">Maquettes (dev)</h1>
+  <p class="text-sm text-gray-500 mb-4">Clique sur un fichier pour l'ouvrir dans le navigateur (développement uniquement).</p>
+  <ul class="space-y-2">
+    <% @files.each do |f| %>
+      <li>
+        <%= link_to f, "/dev/mockups/#{ERB::Util.url_encode(f)}", target: '_blank', rel: 'noopener' %>
+      </li>
+    <% end %>
+  </ul>
+</div>

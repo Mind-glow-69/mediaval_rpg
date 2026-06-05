@@ -1,0 +1,66 @@
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-gray-900/80 border-b border-white/10 backdrop-blur-md">
+  <div class="flex items-center gap-6">
+    <div class="text-xl font-black uppercase text-indigo-400">GM Console</div>
+  </div>
+  <div class="flex items-center gap-4">
+    <nav class="flex gap-4">
+      <%= link_to 'Quests', gm_quests_path, class: 'text-sm text-indigo-300 hover:underline' %>
+      <%= link_to 'Mockups', dev_mockups_path, class: 'text-sm text-indigo-300 hover:underline' if Rails.env.development? %>
+    </nav>
+  </div>
+</header>
+
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-gray-800 border-r border-white/10 py-6">
+  <div class="px-4 mb-6">
+    <div class="text-primary font-bold text-lg">GM Console</div>
+    <div class="text-sm text-gray-400 mt-1">District 07</div>
+  </div>
+  <nav class="flex flex-col gap-1 px-2">
+    <%= link_to 'Dashboard', gm_dashboard_path, class: 'px-4 py-3 text-left text-sm text-indigo-300 bg-indigo-900/10 rounded' %>
+    <%= link_to 'Quests', gm_quests_path, class: 'px-4 py-3 text-left text-sm text-gray-300 hover:bg-white/5 rounded' %>
+    <%= link_to 'Mockups', dev_mockups_path, class: 'px-4 py-3 text-left text-sm text-gray-300 hover:bg-white/5 rounded' if Rails.env.development? %>
+    <span class="px-4 py-3 text-left text-sm text-gray-400">NPCs</span>
+    <span class="px-4 py-3 text-left text-sm text-gray-400">Items / Shop</span>
+  </nav>
+</aside>
+
+<main class="ml-64 mt-20 p-8">
+  <section class="mb-8">
+    <h1 class="text-2xl font-black uppercase">Command Center</h1>
+    <p class="text-sm text-gray-400 mt-2">Session: /gm/dashboard</p>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="p-6 bg-gray-800 border border-white/10 rounded">
+      <h3 class="text-sm text-gray-400 uppercase">Total Players</h3>
+      <div class="text-3xl font-bold mt-2">—</div>
+    </div>
+    <div class="p-6 bg-gray-800 border border-white/10 rounded">
+      <h3 class="text-sm text-gray-400 uppercase">Active Quests</h3>
+      <div class="text-3xl font-bold mt-2"><%= @active_quests_count %></div>
+    </div>
+    <div class="p-6 bg-gray-800 border border-white/10 rounded">
+      <h3 class="text-sm text-gray-400 uppercase">Daily XP Gen</h3>
+      <div class="text-3xl font-bold mt-2">—</div>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-2 bg-gray-800 border border-white/10 p-6 rounded">
+      <h2 class="text-lg font-bold mb-4">Live Activity Log</h2>
+      <div class="space-y-2 text-sm text-gray-300">
+        <p>[QUEST_COMPLETE] Player @demo completed "The first quest".</p>
+        <p>[ITEM_DROP] NPC "Dealer" dropped "NEON_BLADE_MK1".</p>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 border border-white/10 p-6 rounded">
+      <h2 class="text-lg font-bold mb-4">Quick Actions</h2>
+      <div class="flex flex-col gap-2">
+        <%= link_to 'New Quest', new_gm_quest_path, class: 'px-4 py-2 bg-indigo-600 text-white rounded' %>
+        <%= link_to 'Quests index', gm_quests_path, class: 'px-4 py-2 border border-white/10 text-gray-200 rounded' %>
+        <%= link_to 'Mockups', dev_mockups_path, class: 'px-4 py-2 border border-white/10 text-gray-200 rounded' if Rails.env.development? %>
+      </div>
+    </div>
+  </section>
+</main>
