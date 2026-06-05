@@ -11,4 +11,39 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
+  namespace :gm do
+    get 'login', to: 'sessions#new'
+    post 'login', to: 'sessions#create'
+    post 'logout', to: 'sessions#destroy'
+
+    get 'dashboard', to: 'dashboard#index', as: :dashboard
+
+    resources :quests do
+      resources :steps, only: [:create, :update, :destroy]
+    end
+
+    resources :steps, only: [] do
+      resources :riddles, only: [:create, :update, :destroy]
+    end
+
+    resources :npcs, only: [:index, :new, :create, :edit, :update, :destroy] do
+      resources :moves, only: [:create, :update, :destroy]
+    end
+
+    resources :items
+    get 'shop', to: 'shop#show'
+    patch 'shop', to: 'shop#update'
+
+    resources :players, only: [:index, :show, :update]
+    get 'analytics', to: 'analytics#index'
+
+    resources :assets do
+      collection do
+        get 'backgrounds'
+        post 'backgrounds', to: 'assets#upload_background'
+        delete 'backgrounds/:id', to: 'assets#destroy_background', as: :destroy_background
+      end
+    end
+  end
 end

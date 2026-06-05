@@ -1,0 +1,22 @@
+<div class="p-8">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-black">Quests</h1>
+    <%= link_to 'Nouvelle quête', new_gm_quest_path, class: 'px-4 py-2 bg-indigo-600 text-white rounded' %>
+  </div>
+
+  <div class="space-y-4">
+    <% quests = defined?(@quests) ? @quests : Quest.all %>
+    <% quests.each do |quest| %>
+      <div class="p-4 bg-gray-800 border border-white/10 rounded flex justify-between items-center">
+        <div>
+          <div class="font-bold"><%= quest.title %></div>
+          <div class="text-sm text-gray-400"><%= truncate(quest.description, length: 120) %></div>
+        </div>
+        <div class="flex gap-2">
+          <%= link_to 'Voir', gm_quest_path(quest), class: 'px-3 py-2 border border-white/10 rounded text-sm' %>
+          <%= link_to 'Éditer', edit_gm_quest_path(quest), class: 'px-3 py-2 bg-indigo-600 text-white rounded text-sm' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
