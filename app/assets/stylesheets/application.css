@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+	--bi7-primary: #137fec;
+	--bi7-primary-strong: #3691ff;
+	--bi7-secondary: #ff6b00;
+	--bi7-bg: #111318;
+	--bi7-text: #e2e2e8;
+	--bi7-text-muted: #94a3b8;
+	--bi7-border-soft: rgba(255, 255, 255, 0.1);
+}
+
+html.dark,
+body {
+	background-color: var(--bi7-bg);
+	color: var(--bi7-text);
+}
+
+.grain-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 9999;
+	opacity: 0.05;
+}
+
+.brutalist-shadow {
+	box-shadow: 4px 4px 0 0 var(--bi7-primary-strong);
+}
+
+.brutalist-shadow-secondary {
+	box-shadow: 4px 4px 0 0 #004689;
+}
+
+.brutalist-border {
+	border: 2px solid var(--bi7-primary);
+	box-shadow: 4px 4px 0 0 var(--bi7-primary);
+}
+
+.text-stroke,
+.text-stroke-white {
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+	color: transparent;
+}
+
+.monospace {
+	font-family: "JetBrains Mono", "Plus Jakarta Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bi7-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--bi7-primary-strong);
+}

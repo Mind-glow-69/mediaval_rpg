@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LYON07_COMMAND_CORE // GM_CONSOLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../stylesheets/application.css" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        }
+
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0 0 #3691ff;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111318;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3691ff;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c1c6d5",
+                        "on-background": "#e2e2e8",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "tertiary-container": "#e47019",
+                        "stroke-white": "rgba(255, 255, 255, 0.3)",
+                        "primary-fixed": "#d5e3ff",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-primary": "#003061",
+                        "outline": "#8b919f",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#005eb4",
+                        "on-tertiary-fixed": "#321200",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffb68c",
+                        "surface-tint": "#a8c8ff",
+                        "surface-container-highest": "#333539",
+                        "surface-container": "#1e2024",
+                        "primary": "#a8c8ff",
+                        "on-primary-container": "#002955",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e2e2e8",
+                        "on-primary-fixed-variant": "#004689",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-container-lowest": "#0c0e12",
+                        "surface-container-low": "#1a1c20",
+                        "on-surface": "#e2e2e8",
+                        "outline-variant": "#414753",
+                        "on-secondary": "#561f00",
+                        "secondary": "#ffb693",
+                        "surface-dim": "#111318",
+                        "on-tertiary-container": "#481d00",
+                        "surface": "#111318",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-tertiary": "#532200",
+                        "secondary-container": "#fe6b00",
+                        "on-secondary-container": "#572000",
+                        "on-secondary-fixed": "#351000",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "background": "#111318",
+                        "secondary-fixed-dim": "#ffb693",
+                        "surface-card": "rgba(255, 255, 255, 0.05)",
+                        "tertiary-fixed": "#ffdbc9",
+                        "surface-variant": "#333539",
+                        "text-muted": "#94a3b8",
+                        "surface-container-high": "#282a2e",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "primary-container": "#3691ff",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-bright": "#37393e",
+                        "border-muted": "rgba(255, 255, 255, 0.1)"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-base": ["Plus Jakarta Sans"],
+                        "label-xs": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["3.75rem", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-md": ["1.5rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-base": ["0.875rem", {"lineHeight": "1.625", "fontWeight": "500"}],
+                        "label-xs": ["10px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "label-bold": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.3em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background selection:bg-primary selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-background/80 border-b border-white/10 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-xl font-black uppercase tracking-tighter text-primary">LYON07_COMMAND_CORE</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-on-surface text-label-bold font-label-bold transition-colors" href="game_master_commande.html">DASHBOARD</a>
+<a class="text-primary border-b-2 border-primary pb-1 text-label-bold font-label-bold" href="hystory_panel.html">SYSTEMS</a>
+<a class="text-on-surface-variant hover:text-on-surface text-label-bold font-label-bold transition-colors" href="quest_panel_commande.html">INSTANCES</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-white/5 border border-white/10 px-3 py-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">terminal</span>
+<span class="text-[10px] font-mono opacity-50 tracking-widest">CMD://NPC_MGMT</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white/5 transition-colors"><span class="material-symbols-outlined">notifications_active</span></button>
+<button class="p-2 hover:bg-white/5 transition-colors"><span class="material-symbols-outlined">settings</span></button>
+<div class="h-8 w-8 bg-primary/20 border border-primary/50 flex items-center justify-center overflow-hidden">
+<img alt="GM Avatar" class="w-full h-full object-cover grayscale brightness-125" data-alt="A gritty close-up portrait of a tech-savvy urban individual with a piercing gaze, illuminated by cold blue light from a monitor. The skin texture is detailed with realistic pores and fine lines. The background is a dark, out-of-focus server room with small glowing status lights. The overall aesthetic is professional, cyberpunk-influenced, and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvicsatQYSy-jMudQaBEsh9wFepufNCTWP2kgCz9qMNI0_XX2Ec1ixEukM3UbvZSVBztTZGRwvQWpSoArJxcQl05RmeHGZ0e_BNGbdShWIH3kcIIIyc-zXNejEnDbcwRFvQokPN7jn-0PCeIE4ovv1bFsH96lnfhOWFZfYt-12teLSWo-t71NnSdTztjFHKW38NLeiSQrYWeTjosNStn9H3Bs77oe-i_2OD_1xJtWwJ1gUksqwPQwSE4SnKDA0sI-5HC9g2LyPcPc8"/>
+</div>
+<button class="bg-primary text-on-primary px-4 py-1.5 font-label-bold text-label-bold hover:brightness-110 active:scale-95 transition-all">GO_LIVE</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-surface-container-low border-r border-white/10 flex flex-col justify-between py-6 z-40">
+<div>
+<div class="px-6 mb-8">
+<h2 class="text-primary font-black tracking-widest text-label-bold uppercase">GM_CONSOLE_V1</h2>
+<p class="text-[10px] text-on-surface-variant opacity-50">District 07 Protocol // ACTIVE</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-3 text-label-bold font-label-bold transition-all" href="quest_panel_commande.html">
+<span class="material-symbols-outlined">assignment</span>
+                    Quests
+                </a>
+<a class="flex items-center gap-4 text-primary bg-primary/10 border-r-4 border-primary px-6 py-3 text-label-bold font-label-bold translate-x-1 transition-transform" href="hystory_npc.html">
+<span class="material-symbols-outlined">groups</span>
+                    NPCs
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-3 text-label-bold font-label-bold transition-all" href="game_master_commande.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Items/Shop
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-3 text-label-bold font-label-bold transition-all" href="game_master_commande.html">
+<span class="material-symbols-outlined">monitoring</span>
+                    Player Stats
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-3 text-label-bold font-label-bold transition-all" href="game_master_commande.html">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Assets
+                </a>
+</nav>
+<div class="mt-8 px-6">
+<button class="w-full py-3 border border-primary text-primary font-label-bold text-label-bold hover:bg-primary/5 transition-all">NEW_INSTANCE</button>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-2 text-label-bold font-label-bold transition-all" href="../../../documentation/testing_strategy.md">
+<span class="material-symbols-outlined">help_outline</span>
+                Support
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-6 py-2 text-label-bold font-label-bold transition-all" href="hystory_panel.html">
+<span class="material-symbols-outlined">history_edu</span>
+                Logs
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 pb-12 min-h-screen">
+<div class="px-gutter py-12">
+<!-- Section Header: NPCs -->
+<div class="flex justify-between items-end mb-12">
+<div class="relative">
+<h1 class="font-headline-xl text-headline-xl uppercase leading-none opacity-10 absolute -top-8 -left-4 select-none">REGISTRY</h1>
+<h2 class="font-headline-xl text-headline-xl uppercase leading-none relative z-10">NPC_REGISTRY</h2>
+<p class="text-primary font-mono text-[11px] mt-2 tracking-[0.3em]">DISTRICT_07 // POPULATION_MANAGEMENT</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 bg-white/5 border border-white/10 text-on-surface font-label-bold text-label-bold hover:bg-white/10 transition-all uppercase">Batch Update</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-bold text-label-bold brutalist-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-0 active:translate-y-0 transition-all uppercase">Deploy New NPC</button>
+</div>
+</div>
+<!-- NPC Registry Table -->
+<section class="mb-section-padding">
+<div class="bg-surface-container-low border border-white/10 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/5 text-label-bold text-on-surface-variant font-label-bold tracking-widest border-b border-white/10">
+<th class="px-6 py-4 uppercase">ID_IDENTIFIER</th>
+<th class="px-6 py-4 uppercase">NAME/CLASS</th>
+<th class="px-6 py-4 uppercase">STATS</th>
+<th class="px-6 py-4 uppercase">MOVE_SCRIPT</th>
+<th class="px-6 py-4 uppercase">STATUS</th>
+<th class="px-6 py-4 text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 font-mono text-xs opacity-50">#NPC-0701</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-high border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary scale-75">person_play</span>
+</div>
+<div>
+<div class="font-label-bold text-on-surface">LYON_HUSTLER</div>
+<div class="text-[10px] text-on-surface-variant opacity-60">CLASS: CIVILIAN_AMBUSH</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 font-bold">SPD 82</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-bold">AGI 94</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs font-mono text-on-surface-variant">pathfinding_zigzag_v2.api</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 bg-primary/20 text-primary text-[10px] font-black tracking-widest uppercase">
+<span class="w-1.5 h-1.5 bg-primary animate-pulse"></span>
+                                        Deployed
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-mono text-xs opacity-50">#NPC-0704</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-high border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary scale-75">shield</span>
+</div>
+<div>
+<div class="font-label-bold text-on-surface">VNDL_ENFORCER</div>
+<div class="text-[10px] text-on-surface-variant opacity-60">CLASS: GUARD_ELITE</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 font-bold">SPD 45</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-bold">STR 98</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs font-mono text-on-surface-variant">patrol_perimeter_court.api</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-black tracking-widest uppercase">
+<span class="w-1.5 h-1.5 bg-on-surface-variant opacity-40"></span>
+                                        Standby
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Grid Layout: Asset Library & Script Editor -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Script Editor (4 cols) -->
+<div class="lg:col-span-4 sticky top-32">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">data_object</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">SCRIPT_EDITOR</h3>
+</div>
+<div class="bg-surface-container-lowest border border-white/10 p-4 font-mono text-sm leading-relaxed relative group">
+<div class="absolute top-0 right-0 p-2 opacity-30 group-hover:opacity-100 transition-opacity">
+<span class="text-[10px] tracking-tighter">READ_ONLY: FALSE</span>
+</div>
+<div class="text-on-surface-variant mb-2">// NPC_MOVEMENT_LOGIC: #NPC-0701</div>
+<div class="space-y-1">
+<div><span class="text-primary">function</span> <span class="text-secondary">initiatePatrol</span>() {</div>
+<div class="pl-4">node_target = court_point_a;</div>
+<div class="pl-4"><span class="text-primary">if</span> (player_near) {</div>
+<div class="pl-8 text-on-surface/80">engage_mode = <span class="text-tertiary">"HUSTLE"</span>;</div>
+<div class="pl-8 text-on-surface/80">speed = base_speed * 1.5;</div>
+<div class="pl-4">} <span class="text-primary">else</span> {</div>
+<div class="pl-8 text-on-surface/80">loop_animation(<span class="text-tertiary">"idling_dribble"</span>);</div>
+<div class="pl-4">}</div>
+<div>}</div>
+</div>
+<textarea class="mt-4 w-full bg-white/5 border-none focus:ring-0 text-primary font-mono text-xs h-32 resize-none" placeholder="Enter custom Move API hooks..."></textarea>
+<div class="mt-4 flex justify-end">
+<button class="bg-primary text-on-primary px-4 py-2 font-label-bold text-label-bold brutalist-shadow text-xs">COMPILE_PUSH</button>
+</div>
+</div>
+</div>
+<!-- Asset Library (8 cols) -->
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">landscape</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">WORLD_ASSETS</h3>
+</div>
+<div class="flex bg-surface-container-high border border-white/10 p-1">
+<button class="px-4 py-1 text-label-bold text-[10px] bg-primary text-on-primary">DARK</button>
+<button class="px-4 py-1 text-label-bold text-[10px] text-on-surface-variant hover:text-on-surface transition-colors">ELECTRIC</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Featured Asset -->
+<div class="md:col-span-2 group relative overflow-hidden bg-surface-container border border-white/10 aspect-video">
+<img alt="Court Background" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic low-angle shot of a gritty urban streetball half-court in Lyon, France. Perspective view with deep depth. Concrete surface with faded painted lines. Chain-link fence in the background against a dark, moody twilight sky. High-contrast lighting with blue and orange street lamp glows. Centered basketball hoop with a worn net. Large blank concrete wall section in the background perfect for graffiti placement. Professional photography style, urban atmosphere, realistic textures." src="https://lh3.googleusercontent.com/aida/AP1WRLtrXCah37d6ksZblumlYel5bJ79M2_lsPgf-yFXPkVo0ICOgXjQs841KVAy08KeTcUaYZ720kzFSx1uybC4qNn0NMUT7lH2jqITc85PYjLIOFjuG5yvc9VNGDNpu1DV1axqben2ftBIX8hPFVpKejLgbqKYSIPGVlQ_YiCJWfPXTKIUl4zRXBeYf9RnZboRx3Cr9E40m5811vR4ntyMO64nYM-33FfKKDou2euxt3HgDfkpNWBtik4it69Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary px-3 py-1 text-[10px] font-black uppercase text-on-primary">ACTIVE_ENV</span>
+<span class="bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-black uppercase border border-white/20">4K_TEXTURE</span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase leading-none">COURT_LYON_7_MAIN</h4>
+<p class="text-xs text-on-surface-variant mt-1">ID: #ENV-BASE-01 // MAPPED: YES</p>
+</div>
+<button class="bg-white text-background px-4 py-2 font-label-bold text-label-bold text-xs hover:bg-primary transition-colors uppercase">SWAP_ENV</button>
+</div>
+</div>
+</div>
+<!-- Logo/UI Assets -->
+<div class="bg-surface-container-low border border-white/10 p-6 flex flex-col justify-between aspect-video group">
+<div>
+<span class="material-symbols-outlined text-secondary mb-4">token</span>
+<h4 class="font-label-bold text-label-bold text-on-surface tracking-widest uppercase">BRAND_LOGO_PACK</h4>
+<p class="text-xs text-on-surface-variant mt-2">Vector icons for District 07 factions and corporate sponsors.</p>
+</div>
+<div class="flex gap-4 items-center">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center font-black text-[10px]">L7</div>
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary"><span class="material-symbols-outlined scale-75">bolt</span></div>
+<div class="w-8 h-8 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-secondary"><span class="material-symbols-outlined scale-75">skull</span></div>
+</div>
+<button class="ml-auto text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined">download</span></button>
+</div>
+</div>
+<!-- Texture Toggles -->
+<div class="bg-surface-container-low border border-white/10 p-6 aspect-video flex flex-col justify-between">
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface tracking-widest uppercase">SURFACE_FILTERS</h4>
+<div class="mt-4 space-y-3">
+<div class="flex justify-between items-center bg-white/5 px-3 py-2 border border-white/10">
+<span class="text-[10px] font-label-bold">FILM_GRAIN</span>
+<div class="w-10 h-5 bg-primary/20 relative cursor-pointer border border-primary/50">
+<div class="absolute right-1 top-1 w-3 h-3 bg-primary"></div>
+</div>
+</div>
+<div class="flex justify-between items-center bg-white/5 px-3 py-2 border border-white/10">
+<span class="text-[10px] font-label-bold">NEON_OVERDRIVE</span>
+<div class="w-10 h-5 bg-white/5 relative cursor-pointer border border-white/10">
+<div class="absolute left-1 top-1 w-3 h-3 bg-white/40"></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-[9px] text-on-surface-variant uppercase tracking-widest opacity-40 italic">System-wide UI application</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Decoration Background Text -->
+<div class="fixed -bottom-16 -right-24 rotate-[-12deg] z-[-1] pointer-events-none opacity-5">
+<span class="text-[25rem] font-black text-stroke uppercase select-none">LYON07</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="fixed bottom-0 left-64 right-0 flex justify-between items-center px-gutter py-2 text-[10px] tracking-[0.2em] uppercase bg-surface-container-lowest border-t border-white/10 z-50">
+<div class="flex gap-8">
+<span class="text-primary font-black">© 2024 LYON_07_URBAN_MMO // GM_CORE</span>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="game_master_commande.html">System_Status</a>
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="../../../documentation/game_master_routes.md">API_Docs</a>
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="../../../TODO.md">Patch_Notes</a>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-1 h-1 bg-primary rounded-full"></span> SERVER_NODE: FR_LYO_01</span>
+<span class="flex items-center gap-1"><span class="w-1 h-1 bg-secondary rounded-full"></span> LATENCY: 24MS</span>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the Compiling button
+        const compileBtn = document.querySelector('button.brutalist-shadow');
+        if (compileBtn) {
+            compileBtn.addEventListener('click', function() {
+                const originalText = this.innerText;
+                this.innerText = 'UPLOADING...';
+                this.classList.add('bg-secondary');
+                this.classList.add('text-on-secondary');
+                setTimeout(() => {
+                    this.innerText = 'DONE';
+                    setTimeout(() => {
+                        this.innerText = originalText;
+                        this.classList.remove('bg-secondary');
+                        this.classList.remove('text-on-secondary');
+                    }, 2000);
+                }, 1500);
+            });
+        }
+
+        // Text area simple highlighting simulation
+        const textarea = document.querySelector('textarea');
+        if (textarea) {
+            textarea.addEventListener('focus', () => {
+                textarea.parentElement.classList.add('border-primary/50');
+            });
+            textarea.addEventListener('blur', () => {
+                textarea.parentElement.classList.remove('border-primary/50');
+            });
+        }
+    </script>
+</body></html>

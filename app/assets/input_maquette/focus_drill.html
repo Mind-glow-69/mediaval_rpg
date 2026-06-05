@@ -1,0 +1,262 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#3691ff",
+                        "on-surface-variant": "#c1c6d5",
+                        "outline-variant": "#414753",
+                        "on-surface": "#e2e2e8",
+                        "inverse-surface": "#e2e2e8",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "on-error": "#690005",
+                        "stroke-white": "rgba(255, 255, 255, 0.3)",
+                        "inverse-primary": "#005eb4",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "on-tertiary": "#532200",
+                        "on-primary-container": "#002955",
+                        "surface-container": "#1e2024",
+                        "on-secondary-fixed": "#351000",
+                        "surface": "#111318",
+                        "surface-tint": "#a8c8ff",
+                        "surface-container-highest": "#333539",
+                        "surface-dim": "#111318",
+                        "error-container": "#93000a",
+                        "secondary": "#ffb693",
+                        "on-tertiary-fixed": "#321200",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#004689",
+                        "border-muted": "rgba(255, 255, 255, 0.1)",
+                        "surface-variant": "#333539",
+                        "on-secondary": "#561f00",
+                        "outline": "#8b919f",
+                        "on-primary-fixed": "#001b3c",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "secondary-fixed-dim": "#ffb693",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-card": "rgba(255, 255, 255, 0.05)",
+                        "primary": "#a8c8ff",
+                        "tertiary-fixed": "#ffdbc9",
+                        "on-secondary-container": "#572000",
+                        "background": "#111318",
+                        "on-primary": "#003061",
+                        "primary-fixed": "#d5e3ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1a1c20",
+                        "surface-container-high": "#282a2e",
+                        "secondary-container": "#fe6b00",
+                        "on-tertiary-container": "#481d00",
+                        "surface-bright": "#37393e",
+                        "tertiary-container": "#e47019",
+                        "tertiary": "#ffb68c",
+                        "text-muted": "#94a3b8",
+                        "on-background": "#e2e2e8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-base": ["0.875rem", {"lineHeight": "1.625", "fontWeight": "500"}],
+                        "headline-md": ["1.5rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-bold": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.3em", "fontWeight": "800"}],
+                        "headline-xl": ["3.75rem", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "display-hero": ["10rem", {"lineHeight": "0.85", "letterSpacing": "-0.05em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .text-stroke-primary {
+            -webkit-text-stroke: 1px #a8c8ff;
+            color: transparent;
+        }
+        .perspective-container {
+            perspective: 1000px;
+        }
+        .hud-skew {
+            transform: skew(-12deg);
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(54, 145, 255, 0.4);
+        }
+        .glass-panel {
+            background: rgba(17, 19, 24, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base overflow-hidden selection:bg-primary selection:text-on-primary">
+<!-- Immersive Background -->
+<div class="fixed inset-0 z-0 bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDB_kBtlespKpGKBbH_VaA4L56HKVxkEqaEWoQVvJkL4_jv5ZL5_OQTMFxsqo6FHEaeB9QMsFVtCSzyWZ0Yq9JR5XQq2xDnUfwSUYIcVYLkOyHBLaysPHLt3mqBJdtP6FlCrPIpQ3HU3hF6C0DqwMMNEsnqnjMFGfWIgKIrMQ6aliPCR33FuWvmznCgJ9fqREAhDn50ux-rJQn6o9fb6bw9EgXHVXhnApJTkjaEBfRLGK0ut5_U4mWW4vfLQsld9lp2S9ZL3zLdu-zU');">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60"></div>
+<div class="grain-overlay absolute inset-0"></div>
+<!-- Graffiti Wall Highlight Area (Contextual) -->
+<div class="absolute right-[10%] top-[30%] w-[30%] h-[40%] border-2 border-primary/10 rounded-lg pointer-events-none flex items-center justify-center overflow-hidden">
+<!-- Placeholder for dynamic graffiti tags -->
+<span class="font-display-hero text-headline-xl text-primary/5 italic uppercase -rotate-12 select-none">LYON 7</span>
+</div>
+</div>
+<!-- UI Overlay Shell -->
+<div class="relative z-10 h-screen flex flex-col justify-between p-6 md:p-10 pointer-events-none">
+<!-- Top HUD: Quarters, Clock, Score -->
+<header class="flex justify-center items-start w-full pointer-events-auto">
+<div class="flex items-center gap-12 bg-background/40 backdrop-blur-xl px-12 py-4 rounded-none border-b-4 border-primary-container hud-skew shadow-[8px_8px_0_0_#004689]">
+<!-- Quarter -->
+<div class="flex flex-col items-center">
+<span class="font-label-bold text-label-bold text-primary uppercase italic tracking-[0.4em]">Quarter</span>
+<span class="font-headline-xl text-headline-xl italic leading-none">03</span>
+</div>
+<!-- Clock -->
+<div class="flex flex-col items-center min-w-[140px] border-x border-white/10 px-8">
+<span class="font-label-bold text-label-bold text-primary uppercase italic">Game Clock</span>
+<span class="font-headline-xl text-headline-xl italic text-primary tabular-nums" id="timer">01:38</span>
+</div>
+<!-- Score Board -->
+<div class="flex items-center gap-6">
+<div class="text-right">
+<span class="block font-label-bold text-[10px] text-on-surface-variant uppercase">Home</span>
+<span class="font-headline-xl text-headline-xl italic">24</span>
+</div>
+<div class="h-10 w-[2px] bg-primary rotate-12"></div>
+<div class="text-left">
+<span class="block font-label-bold text-[10px] text-on-surface-variant uppercase">Away</span>
+<span class="font-headline-xl text-headline-xl italic text-secondary">22</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Gameplay Canvas (Empty for players) -->
+<main class="flex-grow flex items-center justify-center relative">
+<!-- Interstitial Visual Cues could go here, like 'DEFENSE' or 'SHOT CLOCK' -->
+<div class="absolute bottom-20 left-1/2 -translate-x-1/2 opacity-20">
+<span class="font-display-hero text-display-hero text-stroke-primary italic uppercase select-none">BALL IN SEVEN</span>
+</div>
+</main>
+<!-- Bottom Actions & Quick Info -->
+<footer class="flex justify-between items-end w-full">
+<!-- Active Player Card (Bottom Left) -->
+<div class="pointer-events-auto group">
+<div class="glass-panel p-4 flex gap-4 items-center transition-all duration-300 hover:translate-x-2 border-l-4 border-primary">
+<div class="w-16 h-16 bg-surface-container-high relative overflow-hidden">
+<img alt="Active Player" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm2jQahqOspZVWkB9SheX4Y9A92kXkFMbGuHz-gW0CM9Oh2fVi01B7YvQvC5EzMGf-pVPP6HsmfBRnF1eMUmgO6fYnzIU0qligh5B-1wSqsIkpxHyIDrIpflTsOfJT7bfr6ryyIXxF1Q4JfoK3gL9C4Y64xKfR7zlKKkxkkwD9hy-r2QLbalfU79oUG2WxBhIMtWY4xPNpljINNrVDBiDUsBerPjPN5Rar75to5QQJlKzNWAVjdHmS1G0vhSN0VC3MHC1ni_nEqyQg">
+<div class="absolute inset-0 border border-primary/20"></div>
+</div>
+<div>
+<span class="font-label-bold text-label-bold text-primary italic">ACTIVE HANDLER</span>
+<h3 class="font-headline-md text-headline-md uppercase -mt-1 tracking-tight">K. VALENTINE</h3>
+<div class="flex gap-2 mt-1">
+<div class="h-1 w-12 bg-primary"></div>
+<div class="h-1 w-8 bg-on-surface/20"></div>
+<div class="h-1 w-4 bg-on-surface/20"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Action Bar (Bottom Right) -->
+<div class="flex items-center gap-4 pointer-events-auto">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-widest shadow-[4px_4px_0_0_#004689] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                    EXCHANGE PASS
+                </button>
+<button class="glass-panel text-on-surface font-label-bold text-label-bold px-8 py-4 uppercase tracking-widest hover:bg-white/10 transition-all">
+                    ISOLATE
+                </button>
+</div>
+</footer>
+</div>
+<!-- Left Collapsible Floating Menu -->
+<nav class="fixed left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4 pointer-events-none w-16 hover:w-64 transition-all duration-500 ease-in-out group" id="side-menu">
+<!-- Toggle Anchor (Always visible) -->
+<div class="pointer-events-auto bg-background/80 backdrop-blur-xl border border-primary/30 p-4 shadow-xl flex flex-col items-center gap-6 group-hover:items-start group-hover:px-6">
+<div class="flex items-center gap-4 w-full">
+<div class="material-symbols-outlined text-primary scale-125">menu_open</div>
+<span class="font-label-bold text-label-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">QUICK ACTIONS</span>
+</div>
+<div class="w-full h-[1px] bg-white/10"></div>
+<!-- Tactics -->
+<button class="flex items-center gap-4 w-full hover:text-primary transition-colors text-on-surface-variant group/btn">
+<span class="material-symbols-outlined scale-110 group-hover/btn:scale-125 transition-transform">strategy</span>
+<span class="font-label-bold text-label-bold opacity-0 group-hover:opacity-100 transition-opacity">TACTICS</span>
+</button>
+<!-- Substitutions -->
+<button class="flex items-center gap-4 w-full hover:text-primary transition-colors text-on-surface-variant group/btn">
+<span class="material-symbols-outlined scale-110 group-hover/btn:scale-125 transition-transform">swap_horizontal_circle</span>
+<span class="font-label-bold text-label-bold opacity-0 group-hover:opacity-100 transition-opacity">SUBS</span>
+</button>
+<!-- Timeout -->
+<button class="flex items-center gap-4 w-full hover:text-error transition-colors text-on-surface-variant group/btn">
+<span class="material-symbols-outlined scale-110 group-hover/btn:scale-125 transition-transform">timer_pause</span>
+<span class="font-label-bold text-label-bold opacity-0 group-hover:opacity-100 transition-opacity">TIMEOUT</span>
+</button>
+<div class="w-full h-[1px] bg-white/10"></div>
+<!-- Game Stats -->
+<button class="flex items-center gap-4 w-full hover:text-primary transition-colors text-on-surface-variant group/btn">
+<span class="material-symbols-outlined scale-110 group-hover/btn:scale-125 transition-transform">bar_chart_4_bars</span>
+<span class="font-label-bold text-label-bold opacity-0 group-hover:opacity-100 transition-opacity">LIVE STATS</span>
+</button>
+</div>
+</nav>
+<!-- Top Left Corner Brand / Sector info -->
+<div class="fixed top-8 left-8 z-20 flex items-center gap-4 pointer-events-none">
+<div class="w-2 h-12 bg-primary"></div>
+<div>
+<div class="font-headline-md text-headline-md italic uppercase tracking-tighter text-primary leading-none">BALL IN SEVEN</div>
+<div class="font-label-bold text-[10px] text-on-surface-variant tracking-[0.5em] mt-1">LYON 7 SECTOR // GRIND MODE</div>
+</div>
+</div>
+<!-- UI Interaction Scripts -->
+<script>
+        // Simple Game Clock Simulation
+        let minutes = 4;
+        let seconds = 22;
+        const timerEl = document.getElementById('timer');
+
+        setInterval(() => {
+            if (seconds === 0) {
+                if (minutes === 0) return;
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+            timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }, 1000);
+
+        // Subtle parallax effect on background based on mouse
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 10;
+            const y = (e.clientY / window.innerHeight - 0.5) * 10;
+            document.querySelector('[style*="DATA:IMAGE:IMAGE_11"]').style.transform = `scale(1.05) translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body></html>

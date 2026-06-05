@@ -1,0 +1,383 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BALL IN SEVEN - Character Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="../stylesheets/application.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004689",
+                        "on-surface": "#e2e2e8",
+                        "on-secondary-container": "#572000",
+                        "on-primary-fixed": "#001b3c",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface-card": "rgba(255, 255, 255, 0.05)",
+                        "on-tertiary": "#532200",
+                        "on-secondary": "#561f00",
+                        "on-surface-variant": "#c1c6d5",
+                        "on-primary-container": "#002955",
+                        "tertiary-fixed": "#ffdbc9",
+                        "secondary-fixed": "#ffdbcc",
+                        "text-muted": "#94a3b8",
+                        "inverse-primary": "#005eb4",
+                        "surface-bright": "#37393e",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "secondary-container": "#fe6b00",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-error": "#690005",
+                        "outline-variant": "#414753",
+                        "surface-container-low": "#1a1c20",
+                        "on-secondary-fixed": "#351000",
+                        "secondary": "#ffb693",
+                        "surface-dim": "#111318",
+                        "surface": "#111318",
+                        "primary-container": "#3691ff",
+                        "tertiary-fixed-dim": "#ffb68c",
+                        "surface-container-lowest": "#0c0e12",
+                        "surface-variant": "#333539",
+                        "on-tertiary-container": "#481d00",
+                        "surface-tint": "#a8c8ff",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary-fixed": "#321200",
+                        "surface-container-high": "#282a2e",
+                        "border-muted": "rgba(255, 255, 255, 0.1)",
+                        "outline": "#8b919f",
+                        "primary": "#a8c8ff",
+                        "surface-container": "#1e2024",
+                        "tertiary-container": "#e47019",
+                        "background": "#111318",
+                        "secondary-fixed-dim": "#ffb693",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary": "#003061",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-background": "#e2e2e8",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3035",
+                        "tertiary": "#ffb68c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "section-padding": "8rem",
+                        "container-max": "80rem",
+                        "margin-safe": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-base": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "label-xs": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["3.75rem", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "label-bold": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.3em", "fontWeight": "800"}],
+                        "body-base": ["0.875rem", {"lineHeight": "1.625", "fontWeight": "500"}],
+                        "headline-md": ["1.5rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-hero-mobile": ["12vw", {"lineHeight": "0.85", "letterSpacing": "-0.05em", "fontWeight": "900"}],
+                        "label-xs": ["10px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-hero": ["10rem", {"lineHeight": "0.85", "letterSpacing": "-0.05em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #111318; color: #e2e2e8; overflow-x: hidden; }
+        .grain-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9999; opacity: 0.03;
+            background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .brutalist-shadow { box-shadow: 4px 4px 0 0 #3691ff; }
+        .active-tab-shadow { box-shadow: 4px 4px 0 0 #004689; }
+        .item-slot { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .item-slot:hover { border-color: #3691ff; background: rgba(54, 145, 255, 0.1); transform: translateY(-2px); }
+        .tooltip { visibility: hidden; opacity: 0; transition: opacity 0.2s; }
+        .item-slot:hover .tooltip { visibility: visible; opacity: 1; }
+        .stat-bar { height: 6px; border-radius: 0; }
+    </style>
+</head>
+<body class="font-body-base">
+<div class="grain-overlay"></div>
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low/90 backdrop-blur-lg border-r-2 border-primary shadow-[4px_0_0_0_#3691ff] z-50 flex flex-col py-8 gap-4 hidden md:flex">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-1">BALL IN SEVEN</h1>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold uppercase">LVL 42 GRINDER</p>
+<p class="text-xs text-on-surface-variant opacity-70">Lyon 7 Sector</p>
+</div>
+</div>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li class="">
+<a class="group flex items-center px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:translate-x-2 transition-all duration-200" href="user_quest_panel.html">
+<span class="material-symbols-outlined mr-4">assignment</span>
+<span class="font-label-bold text-label-bold uppercase">Quest Log</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center px-6 py-4 bg-primary text-on-primary font-bold shadow-[4px_4px_0_0_#004689] translate-x-1" href="inventory.html">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-bold text-label-bold uppercase">Character</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:translate-x-2 transition-all duration-200" href="inventory.html">
+<span class="material-symbols-outlined mr-4">backpack</span>
+<span class="font-label-bold text-label-bold uppercase">Inventory</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:translate-x-2 transition-all duration-200" href="schedule_user.html">
+<span class="material-symbols-outlined mr-4">bolt</span>
+<span class="font-label-bold text-label-bold uppercase">Skills</span>
+</a>
+</li>
+<li class="">
+<a class="group flex items-center px-6 py-4 text-on-surface-variant hover:text-on-surface hover:bg-white/5 hover:translate-x-2 transition-all duration-200" href="schedule_user.html">
+<span class="material-symbols-outlined mr-4">map</span>
+<span class="font-label-bold text-label-bold uppercase">Map</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary font-label-bold text-label-bold uppercase border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300">
+                GO TO COURT
+            </button>
+</div>
+<!-- http://127.0.0.1:5500/app/assets/input_maquette/focus_drill.html -->
+</aside>
+<!-- TopAppBar (Mobile & Global) -->
+<header class="fixed top-0 left-0 md:left-64 right-0 z-40 bg-background/80 backdrop-blur-md border-b-2 border-primary/20 px-gutter h-20 flex justify-between items-center w-full">
+<div class="flex items-center">
+<span class="font-headline-xl text-headline-xl italic uppercase tracking-tighter text-primary">BALL IN SEVEN</span>
+</div>
+<div class="flex gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">electric_bolt</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-64 pt-32 pb-20 px-gutter min-h-screen relative overflow-hidden">
+<!-- Logo Watermark Background -->
+<div class="fixed right-[-10%] bottom-[-10%] opacity-[0.03] pointer-events-none rotate-[-15deg] select-none">
+<img alt="Background Watermark" class="w-[800px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAv_DwKasdPlxgEhRgdoZ8WnEx352l3mbE-9fqon9ov4U5O_nsldNZe19uKbrJv9oo5tE6pTt-8y0EBID_rhslbKWcw2J7LhL3uqEdXIUnP-Iwr15uJ_PUgV3WcrVNLFiGRRJMOIWlZBFDwULEsZkAJonDQNiDw5rIuIVMMuzF2S7utwUWoGvDinos9Jirl02rHraT6DTrBaChJRGo1-EH5miZX8Yb00rQg74N5X9a7fxOUnShrE9mnwyG5qRe4x1N8ihwo4SNCIGK">
+</div>
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Character Profile -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div class="relative group">
+<!-- Character Viewport -->
+<div class="aspect-[4/5] bg-surface-container-highest/30 border-2 border-white/10 overflow-hidden relative brutalist-shadow">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<img class="w-full h-full object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-700" data-alt="A stylized, low-angle cinematic portrait of a streetwear athlete in a futuristic Lyon urban setting. The figure wears high-tech basketball gear, neon-accented sneakers, and a sleek snapback. Deep moody blue lighting highlights the silhouette against a gritty concrete background with hazy city lights. The aesthetic is aggressive, neo-brutalist, and high-energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeid-_lKQ1Io5izPS29wblNITVU5lgbpPF2-UdAjInHAaK1vR5_H6u1mS2wjd1IUbL1JcBkOa2JgMLBzfjeORPd2kNmgPL7Bw0x2fTBwCEnWi-trp2pp3osUeDc9R3WmkyJgNYnHYXDUAGbKoCRST2QzWOWvmwzfylZZ-qs4yhgt0kh-dZO-TPCmjaMNxHZQZn3O1ZI6EnwzgCdJN1pntICQ-jzX6lN371ZL42MzFPyOjP65bJFGgjmYNqdjOW047Hz1RYhLBimdHM">
+<!-- Overlay Stats -->
+<div class="absolute top-4 left-4">
+
+</div>
+</div>
+<!-- Level Indicator Badge -->
+
+</div>
+<!-- Attributes & Progress -->
+<div class="bg-white/5 border border-white/10 p-8 space-y-8">
+<div>
+<div class="flex justify-between items-end mb-2">
+<p class="font-label-bold text-label-bold uppercase text-primary">XP Progress</p>
+<p class="font-label-bold text-label-bold">8,450 / 12,000</p>
+</div>
+<div class="w-full bg-surface-container-highest stat-bar">
+<div class="h-full bg-primary" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<p class="font-label-bold text-label-bold uppercase text-secondary">Life / Stamina</p>
+<p class="font-label-bold text-label-bold">92%</p>
+</div>
+<div class="w-full bg-surface-container-highest stat-bar">
+<div class="h-full bg-secondary-container" style="width: 92%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Force</p>
+<p class="font-headline-md text-2xl text-on-surface">88<span class="text-xs text-primary ml-1">+12</span></p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Speed</p>
+<p class="font-headline-md text-2xl text-on-surface">74<span class="text-xs text-error ml-1">-4</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Equipment & Inventory -->
+<div class="lg:col-span-7 flex flex-col gap-10">
+<!-- Equipment Slots -->
+<div class="grid grid-cols-3 gap-6">
+<div class="group relative aspect-square bg-surface-container-low border border-white/20 flex flex-col items-center justify-center brutalist-shadow transition-all hover:border-primary">
+<p class="absolute top-2 left-2 font-label-bold text-[10px] text-white/40 uppercase">Head</p>
+<span class="material-symbols-outlined text-4xl mb-2 text-white/20">headset</span>
+<p class="text-xs font-bold text-white/40">EMPTY</p>
+</div>
+<div class="group relative aspect-square bg-surface-container-low border-2 border-primary flex flex-col items-center justify-center brutalist-shadow">
+<p class="absolute top-2 left-2 font-label-bold text-[10px] text-primary uppercase">Ball</p>
+<img class="w-full h-full object-cover" data-alt="A futuristic basketball with glowing orange neon stripes and a matte carbon fiber texture. The ball sits on a sleek metal display stand in a dark, high-tech industrial environment. Cinematic orange and blue highlights reflect off its surface, emphasizing the high-performance urban athletic aesthetic of the Lyon 7 sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFfhV7YuhjkbqepU4K-IiQ4tbQBeG2UDEMLPB5sJaupJc3oTz-kJSCpL-g1pgOQfuLLCVNPA4QajcidsDSV5nTqgTjYphdscHs2P7NFwp-7dzW9TwinmzAcDM-fQSwE8EBufuBBkd-O7mOoVRiQT9I38cXsX_SKJ248suZ9FUJmms0MJqppOE5ChE5L_GfWgfrmHdLn7w9DLIyQb_lDRsQjPQWI5uOCG7Sab7sD397IBpsoM6TRZM7_wQImDtEoTUKkd0E_joKREK7">
+<div class="absolute bottom-0 left-0 right-0 bg-primary/90 p-1 text-center">
+<p class="text-[10px] font-bold text-on-primary uppercase">Cyber-Ball Mk.1</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-surface-container-low border border-white/20 flex flex-col items-center justify-center brutalist-shadow transition-all hover:border-primary">
+<p class="absolute top-2 left-2 font-label-bold text-[10px] text-white/40 uppercase">Accessory</p>
+<span class="material-symbols-outlined text-4xl mb-2 text-white/20">watch</span>
+<p class="text-xs font-bold text-white/40">EMPTY</p>
+</div>
+</div>
+<!-- Inventory Grid -->
+<div class="bg-surface-container-low p-8 border border-white/10 relative">
+<div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Items</h2>
+<p class="font-label-bold text-label-bold text-primary">12 / 16 SLOTS</p>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<!-- Item 1 -->
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/10 relative cursor-pointer">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all" data-alt="A close-up shot of a premium black streetwear snapback hat with a white embroidered 7 on the front. The hat is made of heavy structured twill and rests on a distressed concrete surface under sharp, dramatic studio lighting. The vibe is gritty, urban, and luxury athletic gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEwhJCYSp6Tf7Vzoenc7z9RW8LOfLSJjcrRt2dxQFg0pPllWcNwE00au2XFqGp5Yykvc63uOJ1yvgVeVRhhtMMrAqARWThIRJGAqu135gzlRHJa5Dq7SgqxhwW1JccceGLtBXfHyh1muDF1AnTLnP18uKupRVesvr3iyQ8XWyaELf9XQFblL7IoAIc5dmUZvIU707WeI6hMJsksUu3MVYK-WrwBZLR4PxqAWV1RcETVsrFPosmfyOUuJ5vSQDBkfIHogvsq-olHZXW">
+<!-- Tooltip -->
+<div class="tooltip absolute bottom-full left-0 mb-4 w-48 z-20 bg-background border border-primary p-3 shadow-2xl pointer-events-none">
+<p class="font-bold text-primary uppercase text-xs mb-1">Urban Snapback</p>
+<p class="text-[10px] text-on-surface-variant mb-2 italic">Standard sector wear.</p>
+<div class="space-y-1">
+<p class="text-[10px] text-secondary flex justify-between"><span class="">+2 Force</span><span class="">✓</span></p>
+<p class="text-[10px] text-error flex justify-between"><span class="">-1 Focus</span><span class="">✗</span></p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/10 relative cursor-pointer">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all" data-alt="A pair of sleek, high-tech neon green and black sneakers with jagged futuristic soles and translucent mesh panels. They are suspended in a void with cinematic blue backlighting and digital particles floating around them. The look is ultra-modern, aggressive, and perfectly suited for the cyber-street culture of Lyon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq66JAdLbNQ7uJoyUPdA3tfErL6PXoJymUv2Wg-0oNU-jYDj60KjkckcuDk9QTZ8rBQprz656yZL_opbJ0_HKoJz_EGobKLXTAvACZUu9fMQO6ApjNpmclr05ZC3tpJtuTcKwooKqa1wKKO3N1fz6EiqrhBEHQQd19XESG-RjRkMD7pX42utH9HKr-K-f-Lai0jOA1QsixabL4Jdy1cLtwKJjIAZSEeWlax7nbvSEp_-rwdQ5mdJqUAeHfeCVr56XkDTczt4tKgnAV">
+<div class="tooltip absolute bottom-full left-0 mb-4 w-48 z-20 bg-background border border-primary p-3 shadow-2xl pointer-events-none">
+<p class="font-bold text-primary uppercase text-xs mb-1">Concrete Sneakers</p>
+<div class="space-y-1">
+<p class="text-[10px] text-secondary flex justify-between"><span class="">+10 Speed</span><span class="">✓</span></p>
+<p class="text-[10px] text-secondary flex justify-between"><span class="">+5 Agility</span><span class="">✓</span></p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="item-slot aspect-square bg-surface-container-highest border-2 border-secondary relative cursor-pointer">
+<div class="absolute top-1 right-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="A glowing blue orb encapsulated in a complex metal cage with sparking electrical arcs. The object represents a power-up or skill chip in an MMORPG. The background is a dark tech laboratory with shallow depth of field, highlighting the intense, vibrant light emanating from the core." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOGEglkYSZil6gUyTEdLaVhntcM_Q0tLzpDV30uiNyso9a-Rk0fK8TOBWTbzZ9DzY-Rv-O_EhKAX7ufEAsMBDfu_MY7VOANPoJ516a0XB6IdROmRbpuwbEiFsOOiTN39WWhWHrSSxhFDmRU2QAKmctacC0L7NOoUHnjGoLip-KsGsofpLdEHeOGwJ23M1YiX4wxWtzXeUARsqupk1LkBScCLqNUKwsw3u9TyxWGLKe4duC0bRGCIWMyijRCHu4FFbIkGZFuA2Nqt1k">
+<div class="tooltip absolute bottom-full left-0 mb-4 w-48 z-20 bg-background border border-secondary p-3 shadow-2xl pointer-events-none">
+<p class="font-bold text-secondary uppercase text-xs mb-1">Gravity Core</p>
+<p class="text-[10px] text-on-surface-variant mb-2 italic">Rare augmentation.</p>
+<div class="space-y-1">
+<p class="text-[10px] text-secondary flex justify-between"><span class="">+15 Jump Power</span><span class="">✓</span></p>
+</div>
+</div>
+</div>
+<!-- Remaining Slots -->
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<div class="item-slot aspect-square bg-surface-container-highest border border-white/5 flex items-center justify-center opacity-30">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+</div>
+<!-- Inventory Stats Overlay -->
+<div class="absolute -bottom-6 right-8 px-6 py-3 bg-background border-2 border-primary text-primary font-label-bold text-label-bold uppercase flex items-center gap-4 brutalist-shadow">
+<span class="material-symbols-outlined text-sm">database</span>
+                            LOAD: 2.4kg / 10.0kg
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive SFX Simulator -->
+<script>
+        document.querySelectorAll('.item-slot, button, a').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                // Subtle interaction logic could go here
+            });
+            el.addEventListener('click', () => {
+                el.classList.add('scale-95');
+                setTimeout(() => el.classList.remove('scale-95'), 100);
+            });
+        });
+    </script>
+</body></html>

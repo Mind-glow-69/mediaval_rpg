@@ -1,0 +1,252 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ball in Seven | Events &amp; Tournaments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="../stylesheets/application.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glitch-text {
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 2px 0 #137fec, -2px 0 #ff00c1;
+        }
+        .court-lines {
+            background-image: 
+                linear-gradient(to right, rgba(19, 127, 236, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(19, 127, 236, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .distorted-font {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            transform: skewX(-5deg);
+        }
+        .glass-card {
+            background: rgba(16, 25, 34, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 127, 236, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+<!-- Abstract Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute inset-0 court-lines opacity-20"></div>
+<div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]"></div>
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80&amp;w=2000')] bg-cover bg-center grayscale" data-alt="Gritty urban basketball court texture background"></div>
+</div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-8 py-6 border-b border-primary/10 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg rotate-3">
+<span class="material-symbols-outlined text-white">sports_basketball</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tighter uppercase italic">Ball in <span class="text-primary">Seven</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary" href="schedule_user.html">Tournaments</a>
+<a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="welcome_page_user.html">Culture</a>
+<a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="user_quest_panel.html">Leaderboards</a>
+<a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="inventory.html">Shop</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-5 py-2 rounded-full border border-primary/30 hover:bg-primary/10 transition-all font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">search</span> Search
+                </button>
+<div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-primary overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a street basketball player" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGGSui6zMZ9LzTX1wcIv3_nbnu_E95sEH1isJZ3rD-X7bq3vJIPsmcpv_F3-AzCtfzURLwaKVgNEd8ZogpSf2zxLlvuhiSKTGOPpBgMVePfmdR4PTNeWFqcix8GTBzgm6_wCzSBTnHGjH7DltSD8Xkg3bfUapICmVLcdwGkKN7Yjc0Fx3M0BgJTX-mZozorm2dCloMRSlOoWtpHIAomX_EEmE87ldMZF7r2Tk8J0yj8ijvOD5MFJEeU1wwl0ccDLJI4e51u4z-zDwR">
+</div>
+</div>
+</header>
+<main class="flex-1 px-8 py-10 max-w-7xl mx-auto w-full grid grid-cols-12 gap-8">
+<!-- Left Side: Timeline & Events -->
+<div class="col-span-12 lg:col-span-8 space-y-12">
+<!-- Hero Section -->
+<section>
+<div class="flex items-end justify-between mb-8">
+<div>
+<p class="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-2">Upcoming Drop</p>
+<h2 class="text-6xl font-black italic uppercase leading-none distorted-font">Schedule <br> &amp; <span class="text-primary">Clashes</span></h2>
+</div>
+<div class="flex gap-4 mb-2">
+<div class="text-center bg-primary/10 p-3 rounded-lg border border-primary/20 min-w-[80px]">
+<span class="block text-2xl font-black">08</span>
+<span class="text-[10px] uppercase font-bold text-primary">Days</span>
+</div>
+<div class="text-center bg-primary/10 p-3 rounded-lg border border-primary/20 min-w-[80px]">
+<span class="block text-2xl font-black">14</span>
+<span class="text-[10px] uppercase font-bold text-primary">Hours</span>
+</div>
+</div>
+</div>
+<!-- Horizontal Event Timeline -->
+<div class="flex gap-6 overflow-x-auto pb-6 no-scrollbar">
+<!-- Event Card 1 -->
+<div class="min-w-[400px] group relative rounded-xl overflow-hidden glass-card transition-all hover:scale-[1.02]">
+<div class="h-56 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Night game at an outdoor court in Lyon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYzaUsN0cmLAwdeOKzoU22hfcDg7UTFYlWequQl2ZYeGrdnhG8zegAsqUJJNWvDIRFjQz4fhTPBIYYnNwi_Iv3h9C0-rJ4QWWSu5rH_kelxdzOb73Rs4ZZqRSKscLME5YeJIKA-odl7x2ioSXS-PfinugPlBOvsM1yfE-qX5k04izG3YlG-JzjlJQ4vngKj7N71Mjf0X7bcyBXqdAvIzuIOo4hIXeZGpAEUW7LXFjS2Q9ngoWQjj3qYCFnJrATTKhcE13y2Ly5XBmG">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary px-3 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest text-white italic">Registration Open</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black italic tracking-tighter uppercase distorted-font group-hover:text-primary transition-colors">Concrete Kings 3v3</h3>
+<span class="text-primary font-black text-xl italic">JUL 14</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Parc Blandan</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span> €45 / Team</span>
+</div>
+<button class="w-full py-3 bg-primary text-white font-black uppercase italic tracking-widest hover:bg-primary/80 transition-all">Claim Spot</button>
+</div>
+</div>
+<!-- Event Card 2 (Culture) -->
+<div class="min-w-[400px] group relative rounded-xl overflow-hidden glass-card transition-all hover:scale-[1.02]">
+<div class="h-56 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="DJs performing at an urban street festival" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYoh2ONH8K0ALWgxAmML92fO5RpbVWAuMQbc4lMjvo9Pk8WeYK2Oc_le1aIr7rZYkD38UQQ6-4vyhtI_VvxokKQc9xrBTRfJeuiBi9M8FNLKe8xk6O3FkAMXzEWRq84P51TRmWvcN-DBc5oltl6CpBw4kkk5mnMi0oXa7wQXbLV-tz3IDSNqE3NyZ9oV13K9UwMxjGN7KnCgNgJ-kLGY73WWHLfbMinz4IoY7oCQxz9cwNzhn4MWT0VkjWswb9ov7SlVDdZHbsT9f">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest italic">Cultural Event</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-black italic tracking-tighter uppercase distorted-font group-hover:text-primary transition-colors">Lyon 7 Beats &amp; Bass</h3>
+<span class="text-slate-400 font-black text-xl italic">JUL 15</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Guillotière</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">confirmation_number</span> Free Entry</span>
+</div>
+<button class="w-full py-3 border border-slate-700 hover:border-primary text-slate-100 font-black uppercase italic tracking-widest transition-all">Add to Calendar</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Month View Grid -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold uppercase tracking-widest italic border-l-4 border-primary pl-4">Full July Calendar</h3>
+<div class="flex gap-2">
+<button class="p-2 border border-primary/20 hover:bg-primary/20 rounded-lg"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 border border-primary/20 hover:bg-primary/20 rounded-lg"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Days of week labels -->
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Mon</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Tue</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Wed</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Thu</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Fri</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Sat</div>
+<div class="text-center py-2 text-[10px] font-black uppercase text-slate-500 italic">Sun</div>
+<!-- Sample Calendar Grid -->
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-600 font-bold italic">28</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-600 font-bold italic">29</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-600 font-bold italic">30</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">01</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">02</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center border-2 border-primary/50 relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="relative text-primary font-black italic text-xl distorted-font">03</span>
+</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">04</div>
+<!-- ... more days -->
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">05</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">06</div>
+<div class="aspect-square bg-primary/40 rounded-lg flex items-center justify-center border-2 border-primary group cursor-pointer">
+<span class="text-white font-black italic text-xl distorted-font">07</span>
+</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">08</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">09</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">10</div>
+<div class="aspect-square glass-card rounded-lg flex items-center justify-center text-slate-100 font-bold italic">11</div>
+</div>
+</section>
+</div>
+<!-- Right Side: Streetwear Checkout Form -->
+<aside class="col-span-12 lg:col-span-4 space-y-8">
+<div class="glass-card rounded-xl p-8 border-t-4 border-primary">
+<div class="mb-8">
+<h3 class="text-3xl font-black uppercase italic distorted-font mb-2">Team <span class="text-primary">Registry</span></h3>
+<p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Concrete Kings Drop 001 / Edition: Lyon 7</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 italic">Squad Alias</label>
+<input class="w-full bg-slate-900 border border-slate-700 focus:border-primary focus:ring-0 rounded-none text-white font-bold uppercase italic p-4 placeholder:text-slate-700" placeholder="e.g. SEVEN CITY WOLVES" type="text">
+</div>
+<div>
+<label class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 italic">Captain &amp; Contact</label>
+<div class="flex gap-2">
+<input class="w-2/3 bg-slate-900 border border-slate-700 focus:border-primary focus:ring-0 rounded-none text-white font-bold uppercase italic p-4 placeholder:text-slate-700" placeholder="Full Name" type="text">
+<input class="w-1/3 bg-slate-900 border border-slate-700 focus:border-primary focus:ring-0 rounded-none text-white font-bold uppercase italic p-4 placeholder:text-slate-700" placeholder="Size" type="text">
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 italic">Roster Strength</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 border border-slate-700 text-xs font-black uppercase italic hover:bg-primary transition-all" type="button">Beginner</button>
+<button class="flex-1 py-3 bg-primary border border-primary text-xs font-black uppercase italic" type="button">Elite</button>
+<button class="flex-1 py-3 border border-slate-700 text-xs font-black uppercase italic hover:bg-primary transition-all" type="button">Pro</button>
+</div>
+</div>
+<div class="pt-6 border-t border-slate-800">
+<div class="flex justify-between items-center mb-6">
+<span class="text-xs font-black uppercase italic tracking-widest">Registration Fee</span>
+<span class="text-2xl font-black italic distorted-font">€45.00</span>
+</div>
+<button class="w-full py-4 bg-primary text-white font-black uppercase italic tracking-[0.2em] text-lg hover:shadow-[0_0_20px_rgba(19,127,236,0.5)] transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">shopping_cart</span>
+                                Add to Roster
+                            </button>
+<p class="text-[9px] text-center mt-4 text-slate-500 uppercase font-bold italic tracking-wider">By registering, you agree to the streetball code of conduct.</p>
+</div>
+</form>
+</div>
+<!-- Lyon Spotlight -->
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-700" data-alt="Dynamic action shot of a basketball player in Lyon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_0fAT1v7cvX-NHz9hoGid0zRryLulo8lSVcHrzKHEqrh_QghP7XT0Vm1OHhV4Dom06taQuKwn4C6zloB0EKegxlAmz_eCapDNFTXQhwVt5lUgYksH8C7Lndv4fofIMg5wsAghPSOgdkv3FI3XrJbDtiq9VXB3yNLo3sN4I4oueEucWpGC-Mk46ZplM9RuZTCLEKkeE0Oogx5o_mqI-KhVhcdVQUIHQ6LYRncSzgSAgjnvjSM7x1Yy50DI5WdVj3LVVeztnigaJTBE">
+<div class="absolute inset-0 bg-primary/40 mix-blend-overlay"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-6">
+<span class="text-[10px] font-black uppercase italic tracking-[0.3em] text-white">Local Pride</span>
+<h4 class="text-2xl font-black italic uppercase leading-none distorted-font">Lyon 7 <br> Hardwood Stories</h4>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer Info -->
+<footer class="mt-auto px-8 py-6 border-t border-primary/10 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 italic">
+<div>© 2024 Ball In Seven Association - Lyon 7</div>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a class="hover:text-primary" href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+<a class="hover:text-primary" href="../../../README.md">Legal</a>
+</div>
+</footer>
+</div>
+</body></html>

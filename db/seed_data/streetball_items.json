@@ -1,0 +1,1160 @@
+{
+  "items": [
+    {
+      "name": "Jersey du Débutant",
+      "type": "Jersey",
+      "rarity": "Commun",
+      "price": 200,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "jersey_debutant_commun.png",
+      "flavor_text": "Maillot basique en coton, peu respirant mais stylé."
+    },
+    {
+      "name": "Jersey du Playmaker",
+      "type": "Jersey",
+      "rarity": "Rare",
+      "price": 1800,
+      "attributes": { "vie": 0, "agility": 12, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+10% précision passe"] },
+      "asset": "jersey_playmaker_rare.png",
+      "flavor_text": "Maillot technique avec motifs de passes précises."
+    },
+    {
+      "name": "Jersey du Sniper",
+      "type": "Jersey",
+      "rarity": "Épique",
+      "price": 8500,
+      "attributes": { "vie": 0, "agility": 18, "disruption": 12, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision tir à 3pts"] },
+      "asset": "jersey_sniper_epic.png",
+      "flavor_text": "Maillot avec capteurs de tir intégrés (style \"Kobe 81\")."
+    },
+    {
+      "name": "Jersey du Roi du Street",
+      "type": "Jersey",
+      "rarity": "Légendaire",
+      "price": 45000,
+      "attributes": { "vie": 10, "agility": 25, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Hoodie Mode",
+          "effect": "Invisibilité 5s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "jersey_roi_street_legendary.png",
+      "flavor_text": "Maillot mythique porté par les légendes du streetball. Brille sous les lumières."
+    },
+    {
+      "name": "Casquette du Recrue",
+      "type": "Hat",
+      "rarity": "Commun",
+      "price": 300,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 0, "weight": 1 },
+      "modifiers": { "passive": [] },
+      "asset": "hat_recrue_commun.png",
+      "flavor_text": "Casquette standard en coton, peu protectrice."
+    },
+    {
+      "name": "Bandeau du Dribbler",
+      "type": "Hat",
+      "rarity": "Rare",
+      "price": 2200,
+      "attributes": { "vie": 0, "agility": 15, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+12% vitesse dribble"] },
+      "asset": "hat_bandeau_dribbler_rare.png",
+      "flavor_text": "Bandeau en tissu stretch, évacue la transpiration."
+    },
+    {
+      "name": "Snapback du Playmaker",
+      "type": "Hat",
+      "rarity": "Épique",
+      "price": 10000,
+      "attributes": { "vie": 0, "agility": 20, "disruption": 10, "weight": 0 },
+      "modifiers": {
+        "passive": [],
+        "active": {
+          "name": "Trash Talk",
+          "effect": "-5% précision tir adverse pendant 10s",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "hat_snapback_playmaker_epic.png",
+      "flavor_text": "Snapback ajustable avec logo \"PM\" brodé. Donne confiance en soi."
+    },
+    {
+      "name": "Couronne du Roi Street",
+      "type": "Hat",
+      "rarity": "Légendaire",
+      "price": 55000,
+      "attributes": { "vie": 8, "agility": 28, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Crown Mode",
+          "effect": "Tous les tirs ratés deviennent des layups",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "hat_couronne_roi_street_legendary.png",
+      "flavor_text": "Couronne en or massif, symbole de domination. Illumine le terrain."
+    },
+    {
+      "name": "Baskets du Débutant",
+      "type": "Shoes",
+      "rarity": "Commun",
+      "price": 500,
+      "attributes": { "vie": 0, "agility": 8, "disruption": 0, "weight": 2 },
+      "modifiers": { "passive": [] },
+      "asset": "shoes_debutant_commun.png",
+      "flavor_text": "Baskets basiques en cuir synthétique. Peu amortissantes."
+    },
+    {
+      "name": "Kicks du Dribbler",
+      "type": "Shoes",
+      "rarity": "Rare",
+      "price": 3500,
+      "attributes": { "vie": 0, "agility": 22, "disruption": 7, "weight": 0 },
+      "modifiers": { "passive": ["+18% adhérence sol"] },
+      "asset": "shoes_kicks_dribbler_rare.png",
+      "flavor_text": "Chaussures avec semelle anti-dérapante (style \"Kyrie 7\")."
+    },
+    {
+      "name": "Jumpsoles du Sauteur",
+      "type": "Shoes",
+      "rarity": "Épique",
+      "price": 15000,
+      "attributes": { "vie": 0, "agility": 30, "disruption": 12, "weight": -3 },
+      "modifiers": {
+        "passive": ["+25% hauteur de saut"],
+        "active": {
+          "name": "Higher Mode",
+          "effect": "Saut +50% pendant 8s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "shoes_jumpsoles_sauteur_epic.png",
+      "flavor_text": "Chaussures à semelle épaisse pour les dunkeurs. Style \"Shaq Attack\"."
+    },
+    {
+      "name": "Sneakers du Roi Street",
+      "type": "Shoes",
+      "rarity": "Légendaire",
+      "price": 70000,
+      "attributes": { "vie": 15, "agility": 40, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+30% vitesse dribble"],
+        "active": {
+          "name": "Lightning Step",
+          "effect": "Dash 20m en 1.5s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "shoes_sneakers_roi_street_legendary.png",
+      "flavor_text": "Sneakers magiques qui s'illuminent au dribble. Portées par les légendes urbaines."
+    },
+    {
+      "name": "Chaussettes Basiques",
+      "type": "Socks",
+      "rarity": "Commun",
+      "price": 50,
+      "attributes": { "vie": 0, "agility": 1, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "socks_basiques_commun.png",
+      "flavor_text": "Chaussettes en coton, sans effet particulier."
+    },
+    {
+      "name": "Chaussettes du Dribbler",
+      "type": "Socks",
+      "rarity": "Rare",
+      "price": 800,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": ["+8% confort (moins de frottements)"] },
+      "asset": "socks_dribbler_rare.png",
+      "flavor_text": "Chaussettes techniques avec coutures renforcées."
+    },
+    {
+      "name": "Chaussettes du Sniper",
+      "type": "Socks",
+      "rarity": "Épique",
+      "price": 4500,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+12% stabilité pied"] },
+      "asset": "socks_sniper_epic.png",
+      "flavor_text": "Chaussettes avec gel amortissant pour les tirs en mouvement."
+    },
+    {
+      "name": "Chaussettes du Roi",
+      "type": "Socks",
+      "rarity": "Légendaire",
+      "price": 25000,
+      "attributes": { "vie": 5, "agility": 15, "disruption": 8, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "No-Slip Mode",
+          "effect": "Adhérence parfaite pendant 5s",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "socks_roi_legendary.png",
+      "flavor_text": "Chaussettes en soie brodées de motifs dorés. Portées par les pros."
+    },
+    {
+      "name": "Lacets Standard",
+      "type": "Laces",
+      "rarity": "Commun",
+      "price": 20,
+      "attributes": { "vie": 0, "agility": 1, "disruption": 0, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "laces_standard_commun.png",
+      "flavor_text": "Lacets en coton, se desserrent rapidement."
+    },
+    {
+      "name": "Lacets du Dribbler",
+      "type": "Laces",
+      "rarity": "Rare",
+      "price": 600,
+      "attributes": { "vie": 0, "agility": 4, "disruption": 2, "weight": 0 },
+      "modifiers": { "passive": ["+10% maintien de la chaussure"] },
+      "asset": "laces_dribbler_rare.png",
+      "flavor_text": "Lacets élastiques avec système de serrage rapide."
+    },
+    {
+      "name": "Lacets du Sniper",
+      "type": "Laces",
+      "rarity": "Épique",
+      "price": 3200,
+      "attributes": { "vie": 0, "agility": 8, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision tir"] },
+      "asset": "laces_sniper_epic.png",
+      "flavor_text": "Lacets avec capteurs de mouvement pour un ajustement optimal."
+    },
+    {
+      "name": "Lacets du Roi Street",
+      "type": "Laces",
+      "rarity": "Légendaire",
+      "price": 18000,
+      "attributes": { "vie": 3, "agility": 12, "disruption": 6, "weight": 0 },
+      "modifiers": {
+        "passive": [],
+        "active": {
+          "name": "Tighten Mode",
+          "effect": "Serrage instantané, +30% adhérence pendant 3s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "laces_roi_street_legendary.png",
+      "flavor_text": "Lacets en fil d'or qui se resserrent automatiquement au dribble."
+    },
+    {
+      "name": "Chaîne en Acier",
+      "type": "Chain",
+      "rarity": "Commun",
+      "price": 150,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 2, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "chain_acier_commun.png",
+      "flavor_text": "Chaîne basique en acier, peu résistante."
+    },
+    {
+      "name": "Chaîne du Dribbler",
+      "type": "Chain",
+      "rarity": "Rare",
+      "price": 1200,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+8% intimidation (adversaires moins agressifs)"] },
+      "asset": "chain_dribbler_rare.png",
+      "flavor_text": "Chaîne en argent avec pendentif \"Ball Hog\"."
+    },
+    {
+      "name": "Chaîne du Sniper",
+      "type": "Chain",
+      "rarity": "Épique",
+      "price": 6500,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 10, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision passe"] },
+      "asset": "chain_sniper_epic.png",
+      "flavor_text": "Chaîne en or avec pendentif \"Swish\"."
+    },
+    {
+      "name": "Chaîne du Roi Street",
+      "type": "Chain",
+      "rarity": "Légendaire",
+      "price": 35000,
+      "attributes": { "vie": 5, "agility": 10, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Chain Lightning",
+          "effect": "Frappe l'adversaire à distance, 10 dégâts",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "chain_roi_street_legendary.png",
+      "flavor_text": "Chaîne en platine avec pendentif \"MVP\". Illumine le terrain."
+    },
+    {
+      "name": "Domino Standard",
+      "type": "Domino",
+      "rarity": "Commun",
+      "price": 100,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "domino_standard_commun.png",
+      "flavor_text": "Domino basique en plastique."
+    },
+    {
+      "name": "Domino du Dribbler",
+      "type": "Domino",
+      "rarity": "Rare",
+      "price": 900,
+      "attributes": { "vie": 0, "agility": 2, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+10% chance de vol de ballon"] },
+      "asset": "domino_dribbler_rare.png",
+      "flavor_text": "Domino en bois gravé avec motifs de dribbles."
+    },
+    {
+      "name": "Domino du Sniper",
+      "type": "Domino",
+      "rarity": "Épique",
+      "price": 5000,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+18% précision tir"] },
+      "asset": "domino_sniper_epic.png",
+      "flavor_text": "Domino en ivoire avec motifs de tirs parfaits."
+    },
+    {
+      "name": "Domino du Roi Street",
+      "type": "Domino",
+      "rarity": "Légendaire",
+      "price": 28000,
+      "attributes": { "vie": 3, "agility": 8, "disruption": 12, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Domino Effect",
+          "effect": "Tous les tirs ratés rebondissent vers un coéquipier",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "domino_roi_street_legendary.png",
+      "flavor_text": "Domino en or massif avec motifs de domination. Porte-bonheur des légendes."
+    },
+    {
+      "name": "Bandeau Standard",
+      "type": "Headband",
+      "rarity": "Commun",
+      "price": 80,
+      "attributes": { "vie": 0, "agility": 2, "disruption": 0, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "headband_standard_commun.png",
+      "flavor_text": "Bandeau en tissu basique."
+    },
+    {
+      "name": "Bandeau du Dribbler",
+      "type": "Headband",
+      "rarity": "Rare",
+      "price": 700,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": ["+12% vitesse dribble"] },
+      "asset": "headband_dribbler_rare.png",
+      "flavor_text": "Bandeau en tissu stretch avec logo \"Handle\"."
+    },
+    {
+      "name": "Bandeau du Sniper",
+      "type": "Headband",
+      "rarity": "Épique",
+      "price": 4000,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 6, "weight": 0 },
+      "modifiers": { "passive": ["+20% précision tir"] },
+      "asset": "headband_sniper_epic.png",
+      "flavor_text": "Bandeau en néoprène avec capteurs de tir."
+    },
+    {
+      "name": "Bandeau du Roi Street",
+      "type": "Headband",
+      "rarity": "Légendaire",
+      "price": 22000,
+      "attributes": { "vie": 4, "agility": 15, "disruption": 10, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Focus Mode",
+          "effect": "Vision thermique pendant 6s (voit à travers les écrans)",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "headband_roi_street_legendary.png",
+      "flavor_text": "Bandeau en soie brodée de fils d'or. Porte-bonheur des joueurs de streetball."
+    },
+    {
+      "name": "Shive Standard",
+      "type": "SlimShive",
+      "rarity": "Commun",
+      "price": 500,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "shive_standard_commun.png",
+      "flavor_text": "Appareil basique pour analyser les stats du jeu."
+    },
+    {
+      "name": "Shive du Dribbler",
+      "type": "SlimShive",
+      "rarity": "Rare",
+      "price": 3000,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 7, "weight": 0 },
+      "modifiers": { "passive": ["+15% analyse des faiblesses adverses"] },
+      "asset": "shive_dribbler_rare.png",
+      "flavor_text": "Shive avec IA intégrée pour repérer les failles en défense."
+    },
+    {
+      "name": "Shive du Sniper",
+      "type": "SlimShive",
+      "rarity": "Épique",
+      "price": 12000,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 12, "weight": 0 },
+      "modifiers": { "passive": ["+25% prédiction des mouvements adverses"] },
+      "asset": "shive_sniper_epic.png",
+      "flavor_text": "Shive holographique qui projette les trajectoires des tirs."
+    },
+    {
+      "name": "Shive du Roi Street",
+      "type": "SlimShive",
+      "rarity": "Légendaire",
+      "price": 60000,
+      "attributes": { "vie": 8, "agility": 18, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+30% style (réputation +)"],
+        "active": {
+          "name": "Hologram Overload",
+          "effect": "Projette 3 clones de toi-même pendant 8s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "shive_roi_street_legendary.png",
+      "flavor_text": "Shive prototype utilisé par les équipes pro. Illumine tout le terrain."
+    },
+    {
+      "name": "Ballon du Débutant",
+      "type": "Ball",
+      "rarity": "Commun",
+      "price": 100,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "ball_debutant_commun.png",
+      "flavor_text": "Ballon standard en cuir synthétique. Peu rebondissant."
+    },
+    {
+      "name": "Ballon du Dribbler",
+      "type": "Ball",
+      "rarity": "Rare",
+      "price": 1500,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+12% grip (meilleur contrôle)"] },
+      "asset": "ball_dribbler_rare.png",
+      "flavor_text": "Ballon avec rainures profondes pour un dribble précis."
+    },
+    {
+      "name": "Ballon du Sniper",
+      "type": "Ball",
+      "rarity": "Épique",
+      "price": 7000,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+20% précision tir"] },
+      "asset": "ball_sniper_epic.png",
+      "flavor_text": "Ballon avec capteurs de pression pour un tir parfait."
+    },
+    {
+      "name": "Ballon du Roi Street",
+      "type": "Ball",
+      "rarity": "Légendaire",
+      "price": 40000,
+      "attributes": { "vie": 5, "agility": 12, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Lightning Ball",
+          "effect": "Ballon qui électrise l'adversaire au contact, 5 dégâts",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "ball_roi_street_legendary.png",
+      "flavor_text": "Ballon mythique qui brille et s'adapte à la main du joueur. Porte-bonheur."
+    },
+    {
+      "name": "Veste Lestée Standard",
+      "type": "TrainingVest",
+      "rarity": "Commun",
+      "price": 1200,
+      "attributes": { "vie": 5, "agility": 0, "disruption": 0, "weight": 10 },
+      "modifiers": { "passive": ["+20% endurance (moins de fatigue)"] },
+      "asset": "vest_lestee_standard_commun.png",
+      "flavor_text": "Veste avec poches de sable pour simuler la résistance."
+    },
+    {
+      "name": "Veste du Dribbler",
+      "type": "TrainingVest",
+      "rarity": "Rare",
+      "price": 5500,
+      "attributes": { "vie": 10, "agility": 5, "disruption": 0, "weight": 15 },
+      "modifiers": { "passive": ["+15% vitesse dribble"] },
+      "asset": "vest_dribbler_rare.png",
+      "flavor_text": "Veste technique avec poids ajustables pour travailler l'endurance."
+    },
+    {
+      "name": "Veste du Sniper",
+      "type": "TrainingVest",
+      "rarity": "Épique",
+      "price": 20000,
+      "attributes": { "vie": 15, "agility": 10, "disruption": 0, "weight": 20 },
+      "modifiers": { "passive": ["+25% précision tir"] },
+      "asset": "vest_sniper_epic.png",
+      "flavor_text": "Veste avec capteurs de mouvement pour analyser la technique de tir."
+    },
+    {
+      "name": "Veste du Roi Street",
+      "type": "TrainingVest",
+      "rarity": "Légendaire",
+      "price": 90000,
+      "attributes": { "vie": 20, "agility": 15, "disruption": 8, "weight": 25 },
+      "modifiers": {
+        "passive": ["+30% style (réputation +)"],
+        "active": {
+          "name": "Power Surge",
+          "effect": "Dégâts physiques +30% pendant 10s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "vest_roi_street_legendary.png",
+      "flavor_text": "Veste prototype en nanofibres. Donne une puissance surhumaine. Illumine au sprint."
+    },
+    {
+      "name": "Poids Cheville Standard",
+      "type": "AnkleWeights",
+      "rarity": "Commun",
+      "price": 800,
+      "attributes": { "vie": 3, "agility": 0, "disruption": 0, "weight": 5 },
+      "modifiers": { "passive": ["+10% résistance aux contacts"] },
+      "asset": "ankle_standard_commun.png",
+      "flavor_text": "Poids en métal pour renforcer les jambes."
+    },
+    {
+      "name": "Poids Cheville du Dribbler",
+      "type": "AnkleWeights",
+      "rarity": "Rare",
+      "price": 4000,
+      "attributes": { "vie": 6, "agility": 4, "disruption": 0, "weight": 8 },
+      "modifiers": { "passive": ["+18% hauteur de saut"] },
+      "asset": "ankle_dribbler_rare.png",
+      "flavor_text": "Poids avec système de verrouillage pour un entraînement intense."
+    },
+    {
+      "name": "Poids Cheville du Sniper",
+      "type": "AnkleWeights",
+      "rarity": "Épique",
+      "price": 15000,
+      "attributes": { "vie": 10, "agility": 8, "disruption": 0, "weight": 12 },
+      "modifiers": { "passive": ["+25% stabilité pied"] },
+      "asset": "ankle_sniper_epic.png",
+      "flavor_text": "Poids en carbone pour un entraînement de précision."
+    },
+    {
+      "name": "Poids Cheville du Roi Street",
+      "type": "AnkleWeights",
+      "rarity": "Légendaire",
+      "price": 75000,
+      "attributes": { "vie": 15, "agility": 12, "disruption": 5, "weight": 18 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Ankle Breaker",
+          "effect": "Frappe l'adversaire au contact, 8 dégâts",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "ankle_roi_street_legendary.png",
+      "flavor_text": "Poids magiques en or massif. Donne une puissance de frappe légendaire."
+    },
+    {
+      "name": "Jersey du Débutant",
+      "type": "Jersey",
+      "rarity": "Commun",
+      "price": 200,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "jersey_debutant_commun.png",
+      "flavor_text": "Maillot basique en coton, peu respirant mais stylé."
+    },
+    {
+      "name": "Jersey du Playmaker",
+      "type": "Jersey",
+      "rarity": "Rare",
+      "price": 1800,
+      "attributes": { "vie": 0, "agility": 12, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+10% précision passe"] },
+      "asset": "jersey_playmaker_rare.png",
+      "flavor_text": "Maillot technique avec motifs de passes précises."
+    },
+    {
+      "name": "Jersey du Sniper",
+      "type": "Jersey",
+      "rarity": "Épique",
+      "price": 8500,
+      "attributes": { "vie": 0, "agility": 18, "disruption": 12, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision tir à 3pts"] },
+      "asset": "jersey_sniper_epic.png",
+      "flavor_text": "Maillot avec capteurs de tir intégrés (style \"Kobe 81\")."
+    },
+    {
+      "name": "Jersey du Roi du Street",
+      "type": "Jersey",
+      "rarity": "Légendaire",
+      "price": 45000,
+      "attributes": { "vie": 10, "agility": 25, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Hoodie Mode",
+          "effect": "Invisibilité 5s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "jersey_roi_street_legendary.png",
+      "flavor_text": "Maillot mythique porté par les légendes du streetball. Brille sous les lumières."
+    },
+    {
+      "name": "Casquette du Recrue",
+      "type": "Hat",
+      "rarity": "Commun",
+      "price": 300,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 0, "weight": 1 },
+      "modifiers": { "passive": [] },
+      "asset": "hat_recrue_commun.png",
+      "flavor_text": "Casquette standard en coton, peu protectrice."
+    },
+    {
+      "name": "Bandeau du Dribbler",
+      "type": "Hat",
+      "rarity": "Rare",
+      "price": 2200,
+      "attributes": { "vie": 0, "agility": 15, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+12% vitesse dribble"] },
+      "asset": "hat_bandeau_dribbler_rare.png",
+      "flavor_text": "Bandeau en tissu stretch, évacue la transpiration."
+    },
+    {
+      "name": "Snapback du Playmaker",
+      "type": "Hat",
+      "rarity": "Épique",
+      "price": 10000,
+      "attributes": { "vie": 0, "agility": 20, "disruption": 10, "weight": 0 },
+      "modifiers": {
+        "passive": [],
+        "active": {
+          "name": "Trash Talk",
+          "effect": "-5% précision tir adverse pendant 10s",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "hat_snapback_playmaker_epic.png",
+      "flavor_text": "Snapback ajustable avec logo \"PM\" brodé. Donne confiance en soi."
+    },
+    {
+      "name": "Couronne du Roi Street",
+      "type": "Hat",
+      "rarity": "Légendaire",
+      "price": 55000,
+      "attributes": { "vie": 8, "agility": 28, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Crown Mode",
+          "effect": "Tous les tirs ratés deviennent des layups",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "hat_couronne_roi_street_legendary.png",
+      "flavor_text": "Couronne en or massif, symbole de domination. Illumine le terrain."
+    },
+    {
+      "name": "Baskets du Débutant",
+      "type": "Shoes",
+      "rarity": "Commun",
+      "price": 500,
+      "attributes": { "vie": 0, "agility": 8, "disruption": 0, "weight": 2 },
+      "modifiers": { "passive": [] },
+      "asset": "shoes_debutant_commun.png",
+      "flavor_text": "Baskets basiques en cuir synthétique. Peu amortissantes."
+    },
+    {
+      "name": "Kicks du Dribbler",
+      "type": "Shoes",
+      "rarity": "Rare",
+      "price": 3500,
+      "attributes": { "vie": 0, "agility": 22, "disruption": 7, "weight": 0 },
+      "modifiers": { "passive": ["+18% adhérence sol"] },
+      "asset": "shoes_kicks_dribbler_rare.png",
+      "flavor_text": "Chaussures avec semelle anti-dérapante (style \"Kyrie 7\")."
+    },
+    {
+      "name": "Jumpsoles du Sauteur",
+      "type": "Shoes",
+      "rarity": "Épique",
+      "price": 15000,
+      "attributes": { "vie": 0, "agility": 30, "disruption": 12, "weight": -3 },
+      "modifiers": {
+        "passive": ["+25% hauteur de saut"],
+        "active": {
+          "name": "Higher Mode",
+          "effect": "Saut +50% pendant 8s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "shoes_jumpsoles_sauteur_epic.png",
+      "flavor_text": "Chaussures à semelle épaisse pour les dunkeurs. Style \"Shaq Attack\"."
+    },
+    {
+      "name": "Sneakers du Roi Street",
+      "type": "Shoes",
+      "rarity": "Légendaire",
+      "price": 70000,
+      "attributes": { "vie": 15, "agility": 40, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+30% vitesse dribble"],
+        "active": {
+          "name": "Lightning Step",
+          "effect": "Dash 20m en 1.5s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "shoes_sneakers_roi_street_legendary.png",
+      "flavor_text": "Sneakers magiques qui s'illuminent au dribble. Portées par les légendes urbaines."
+    },
+    {
+      "name": "Chaussettes Basiques",
+      "type": "Socks",
+      "rarity": "Commun",
+      "price": 50,
+      "attributes": { "vie": 0, "agility": 1, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "socks_basiques_commun.png",
+      "flavor_text": "Chaussettes en coton, sans effet particulier."
+    },
+    {
+      "name": "Chaussettes du Dribbler",
+      "type": "Socks",
+      "rarity": "Rare",
+      "price": 800,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": ["+8% confort (moins de frottements)"] },
+      "asset": "socks_dribbler_rare.png",
+      "flavor_text": "Chaussettes techniques avec coutures renforcées."
+    },
+    {
+      "name": "Chaussettes du Sniper",
+      "type": "Socks",
+      "rarity": "Épique",
+      "price": 4500,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+12% stabilité pied"] },
+      "asset": "socks_sniper_epic.png",
+      "flavor_text": "Chaussettes avec gel amortissant pour les tirs en mouvement."
+    },
+    {
+      "name": "Chaussettes du Roi",
+      "type": "Socks",
+      "rarity": "Légendaire",
+      "price": 25000,
+      "attributes": { "vie": 5, "agility": 15, "disruption": 8, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "No-Slip Mode",
+          "effect": "Adhérence parfaite pendant 5s",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "socks_roi_legendary.png",
+      "flavor_text": "Chaussettes en soie brodées de motifs dorés. Portées par les pros."
+    },
+    {
+      "name": "Lacets Standard",
+      "type": "Laces",
+      "rarity": "Commun",
+      "price": 20,
+      "attributes": { "vie": 0, "agility": 1, "disruption": 0, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "laces_standard_commun.png",
+      "flavor_text": "Lacets en coton, se desserrent rapidement."
+    },
+    {
+      "name": "Lacets du Dribbler",
+      "type": "Laces",
+      "rarity": "Rare",
+      "price": 600,
+      "attributes": { "vie": 0, "agility": 4, "disruption": 2, "weight": 0 },
+      "modifiers": { "passive": ["+10% maintien de la chaussure"] },
+      "asset": "laces_dribbler_rare.png",
+      "flavor_text": "Lacets élastiques avec système de serrage rapide."
+    },
+    {
+      "name": "Lacets du Sniper",
+      "type": "Laces",
+      "rarity": "Épique",
+      "price": 3200,
+      "attributes": { "vie": 0, "agility": 8, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision tir"] },
+      "asset": "laces_sniper_epic.png",
+      "flavor_text": "Lacets avec capteurs de mouvement pour un ajustement optimal."
+    },
+    {
+      "name": "Lacets du Roi Street",
+      "type": "Laces",
+      "rarity": "Légendaire",
+      "price": 18000,
+      "attributes": { "vie": 3, "agility": 12, "disruption": 6, "weight": 0 },
+      "modifiers": {
+        "passive": [],
+        "active": {
+          "name": "Tighten Mode",
+          "effect": "Serrage instantané, +30% adhérence pendant 3s",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "laces_roi_street_legendary.png",
+      "flavor_text": "Lacets en fil d'or qui se resserrent automatiquement au dribble."
+    },
+    {
+      "name": "Chaîne en Acier",
+      "type": "Chain",
+      "rarity": "Commun",
+      "price": 150,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 2, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "chain_acier_commun.png",
+      "flavor_text": "Chaîne basique en acier, peu résistante."
+    },
+    {
+      "name": "Chaîne du Dribbler",
+      "type": "Chain",
+      "rarity": "Rare",
+      "price": 1200,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 5, "weight": 0 },
+      "modifiers": { "passive": ["+8% intimidation (adversaires moins agressifs)"] },
+      "asset": "chain_dribbler_rare.png",
+      "flavor_text": "Chaîne en argent avec pendentif \"Ball Hog\"."
+    },
+    {
+      "name": "Chaîne du Sniper",
+      "type": "Chain",
+      "rarity": "Épique",
+      "price": 6500,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 10, "weight": 0 },
+      "modifiers": { "passive": ["+15% précision passe"] },
+      "asset": "chain_sniper_epic.png",
+      "flavor_text": "Chaîne en or avec pendentif \"Swish\"."
+    },
+    {
+      "name": "Chaîne du Roi Street",
+      "type": "Chain",
+      "rarity": "Légendaire",
+      "price": 35000,
+      "attributes": { "vie": 5, "agility": 10, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Chain Lightning",
+          "effect": "Frappe l'adversaire à distance, 10 dégâts",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "chain_roi_street_legendary.png",
+      "flavor_text": "Chaîne en platine avec pendentif \"MVP\". Illumine le terrain."
+    },
+    {
+      "name": "Domino Standard",
+      "type": "Domino",
+      "rarity": "Commun",
+      "price": 100,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "domino_standard_commun.png",
+      "flavor_text": "Domino basique en plastique."
+    },
+    {
+      "name": "Domino du Dribbler",
+      "type": "Domino",
+      "rarity": "Rare",
+      "price": 900,
+      "attributes": { "vie": 0, "agility": 2, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+10% chance de vol de ballon"] },
+      "asset": "domino_dribbler_rare.png",
+      "flavor_text": "Domino en bois gravé avec motifs de dribbles."
+    },
+    {
+      "name": "Domino du Sniper",
+      "type": "Domino",
+      "rarity": "Épique",
+      "price": 5000,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+18% précision tir"] },
+      "asset": "domino_sniper_epic.png",
+      "flavor_text": "Domino en ivoire avec motifs de tirs parfaits."
+    },
+    {
+      "name": "Domino du Roi Street",
+      "type": "Domino",
+      "rarity": "Légendaire",
+      "price": 28000,
+      "attributes": { "vie": 3, "agility": 8, "disruption": 12, "weight": 0 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Domino Effect",
+          "effect": "Tous les tirs ratés rebondissent vers un coéquipier",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "domino_roi_street_legendary.png",
+      "flavor_text": "Domino en or massif avec motifs de domination. Porte-bonheur des légendes."
+    },
+    {
+      "name": "Bandeau Standard",
+      "type": "Headband",
+      "rarity": "Commun",
+      "price": 80,
+      "attributes": { "vie": 0, "agility": 2, "disruption": 0, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "headband_standard_commun.png",
+      "flavor_text": "Bandeau en tissu basique."
+    },
+    {
+      "name": "Bandeau du Dribbler",
+      "type": "Headband",
+      "rarity": "Rare",
+      "price": 700,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": ["+12% vitesse dribble"] },
+      "asset": "headband_dribbler_rare.png",
+      "flavor_text": "Bandeau en tissu stretch avec logo \"Handle\"."
+    },
+    {
+      "name": "Bandeau du Sniper",
+      "type": "Headband",
+      "rarity": "Épique",
+      "price": 4000,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 6, "weight": 0 },
+      "modifiers": { "passive": ["+20% précision tir"] },
+      "asset": "headband_sniper_epic.png",
+      "flavor_text": "Bandeau en néoprène avec capteurs de tir."
+    },
+    {
+      "name": "Bandeau du Roi Street",
+      "type": "Headband",
+      "rarity": "Légendaire",
+      "price": 22000,
+      "attributes": { "vie": 4, "agility": 15, "disruption": 10, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Focus Mode",
+          "effect": "Vision thermique pendant 6s (voit à travers les écrans)",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "headband_roi_street_legendary.png",
+      "flavor_text": "Bandeau en soie brodée de fils d'or. Porte-bonheur des joueurs de streetball."
+    },
+    {
+      "name": "Shive Standard",
+      "type": "SlimShive",
+      "rarity": "Commun",
+      "price": 500,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 3, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "shive_standard_commun.png",
+      "flavor_text": "Appareil basique pour analyser les stats du jeu."
+    },
+    {
+      "name": "Shive du Dribbler",
+      "type": "SlimShive",
+      "rarity": "Rare",
+      "price": 3000,
+      "attributes": { "vie": 0, "agility": 5, "disruption": 7, "weight": 0 },
+      "modifiers": { "passive": ["+15% analyse des faiblesses adverses"] },
+      "asset": "shive_dribbler_rare.png",
+      "flavor_text": "Shive avec IA intégrée pour repérer les failles en défense."
+    },
+    {
+      "name": "Shive du Sniper",
+      "type": "SlimShive",
+      "rarity": "Épique",
+      "price": 12000,
+      "attributes": { "vie": 0, "agility": 10, "disruption": 12, "weight": 0 },
+      "modifiers": { "passive": ["+25% prédiction des mouvements adverses"] },
+      "asset": "shive_sniper_epic.png",
+      "flavor_text": "Shive holographique qui projette les trajectoires des tirs."
+    },
+    {
+      "name": "Shive du Roi Street",
+      "type": "SlimShive",
+      "rarity": "Légendaire",
+      "price": 60000,
+      "attributes": { "vie": 8, "agility": 18, "disruption": 20, "weight": 0 },
+      "modifiers": {
+        "passive": ["+30% style (réputation +)"],
+        "active": {
+          "name": "Hologram Overload",
+          "effect": "Projette 3 clones de toi-même pendant 8s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "shive_roi_street_legendary.png",
+      "flavor_text": "Shive prototype utilisé par les équipes pro. Illumine tout le terrain."
+    },
+    {
+      "name": "Ballon du Débutant",
+      "type": "Ball",
+      "rarity": "Commun",
+      "price": 100,
+      "attributes": { "vie": 0, "agility": 0, "disruption": 1, "weight": 0 },
+      "modifiers": { "passive": [] },
+      "asset": "ball_debutant_commun.png",
+      "flavor_text": "Ballon standard en cuir synthétique. Peu rebondissant."
+    },
+    {
+      "name": "Ballon du Dribbler",
+      "type": "Ball",
+      "rarity": "Rare",
+      "price": 1500,
+      "attributes": { "vie": 0, "agility": 3, "disruption": 4, "weight": 0 },
+      "modifiers": { "passive": ["+12% grip (meilleur contrôle)"] },
+      "asset": "ball_dribbler_rare.png",
+      "flavor_text": "Ballon avec rainures profondes pour un dribble précis."
+    },
+    {
+      "name": "Ballon du Sniper",
+      "type": "Ball",
+      "rarity": "Épique",
+      "price": 7000,
+      "attributes": { "vie": 0, "agility": 6, "disruption": 8, "weight": 0 },
+      "modifiers": { "passive": ["+20% précision tir"] },
+      "asset": "ball_sniper_epic.png",
+      "flavor_text": "Ballon avec capteurs de pression pour un tir parfait."
+    },
+    {
+      "name": "Ballon du Roi Street",
+      "type": "Ball",
+      "rarity": "Légendaire",
+      "price": 40000,
+      "attributes": { "vie": 5, "agility": 12, "disruption": 15, "weight": 0 },
+      "modifiers": {
+        "passive": ["+25% style (réputation +)"],
+        "active": {
+          "name": "Lightning Ball",
+          "effect": "Ballon qui électrise l'adversaire au contact, 5 dégâts",
+          "cooldown": "1 min"
+        }
+      },
+      "asset": "ball_roi_street_legendary.png",
+      "flavor_text": "Ballon mythique qui brille et s'adapte à la main du joueur. Porte-bonheur."
+    },
+    {
+      "name": "Veste Lestée Standard",
+      "type": "TrainingVest",
+      "rarity": "Commun",
+      "price": 1200,
+      "attributes": { "vie": 5, "agility": 0, "disruption": 0, "weight": 10 },
+      "modifiers": { "passive": ["+20% endurance (moins de fatigue)"] },
+      "asset": "vest_lestee_standard_commun.png",
+      "flavor_text": "Veste avec poches de sable pour simuler la résistance."
+    },
+    {
+      "name": "Veste du Dribbler",
+      "type": "TrainingVest",
+      "rarity": "Rare",
+      "price": 5500,
+      "attributes": { "vie": 10, "agility": 5, "disruption": 0, "weight": 15 },
+      "modifiers": { "passive": ["+15% vitesse dribble"] },
+      "asset": "vest_dribbler_rare.png",
+      "flavor_text": "Veste technique avec poids ajustables pour travailler l'endurance."
+    },
+    {
+      "name": "Veste du Sniper",
+      "type": "TrainingVest",
+      "rarity": "Épique",
+      "price": 20000,
+      "attributes": { "vie": 15, "agility": 10, "disruption": 0, "weight": 20 },
+      "modifiers": { "passive": ["+25% précision tir"] },
+      "asset": "vest_sniper_epic.png",
+      "flavor_text": "Veste avec capteurs de mouvement pour analyser la technique de tir."
+    },
+    {
+      "name": "Veste du Roi Street",
+      "type": "TrainingVest",
+      "rarity": "Légendaire",
+      "price": 90000,
+      "attributes": { "vie": 20, "agility": 15, "disruption": 8, "weight": 25 },
+      "modifiers": {
+        "passive": ["+30% style (réputation +)"],
+        "active": {
+          "name": "Power Surge",
+          "effect": "Dégâts physiques +30% pendant 10s",
+          "cooldown": "3 min"
+        }
+      },
+      "asset": "vest_roi_street_legendary.png",
+      "flavor_text": "Veste prototype en nanofibres. Donne une puissance surhumaine. Illumine au sprint."
+    },
+    {
+      "name": "Poids Cheville Standard",
+      "type": "AnkleWeights",
+      "rarity": "Commun",
+      "price": 800,
+      "attributes": { "vie": 3, "agility": 0, "disruption": 0, "weight": 5 },
+      "modifiers": { "passive": ["+10% résistance aux contacts"] },
+      "asset": "ankle_standard_commun.png",
+      "flavor_text": "Poids en métal pour renforcer les jambes."
+    },
+    {
+      "name": "Poids Cheville du Dribbler",
+      "type": "AnkleWeights",
+      "rarity": "Rare",
+      "price": 4000,
+      "attributes": { "vie": 6, "agility": 4, "disruption": 0, "weight": 8 },
+      "modifiers": { "passive": ["+18% hauteur de saut"] },
+      "asset": "ankle_dribbler_rare.png",
+      "flavor_text": "Poids avec système de verrouillage pour un entraînement intense."
+    },
+    {
+      "name": "Poids Cheville du Sniper",
+      "type": "AnkleWeights",
+      "rarity": "Épique",
+      "price": 15000,
+      "attributes": { "vie": 10, "agility": 8, "disruption": 0, "weight": 12 },
+      "modifiers": { "passive": ["+25% stabilité pied"] },
+      "asset": "ankle_sniper_epic.png",
+      "flavor_text": "Poids en carbone pour un entraînement de précision."
+    },
+    {
+      "name": "Poids Cheville du Roi Street",
+      "type": "AnkleWeights",
+      "rarity": "Légendaire",
+      "price": 75000,
+      "attributes": { "vie": 15, "agility": 12, "disruption": 5, "weight": 18 },
+      "modifiers": {
+        "passive": ["+20% style (réputation +)"],
+        "active": {
+          "name": "Ankle Breaker",
+          "effect": "Frappe l'adversaire au contact, 8 dégâts",
+          "cooldown": "2 min"
+        }
+      },
+      "asset": "ankle_roi_street_legendary.png",
+      "flavor_text": "Poids magiques en or massif. Donne une puissance de frappe légendaire."
+    }
+  ]
+}

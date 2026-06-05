@@ -1,0 +1,246 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ball in Seven | New Gen Streetball Lyon 7</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="../stylesheets/application.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "accent": "#ff6b00",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0a0c10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.brutalist-border {
+    border: 2px solid #137fec;
+    box-shadow: 4px 4px 0 0 #137fec
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAKOC-me5h523ULpsZmGqiu8vYELejsOmUoCq6xpvSAZjOKVpiF8iVScH0cKgcaczdQ053P09p4lvJ3QThi3jyJxkAnmeFwVSMKxp2kso4Z23zaLvdchUmcYCu7LSEdmo2WSlY7nI5V6rJv0S8fgzwI-1NLq4Nh2t3OMraHN3jjixzRa3RBPUZ0Z0j_vASVnirlAuRWRvqe22uMJuj3sBd6-qwcfRIJ7xRsL5R_JL3-oPv8b7p35Z_9EUt6-byMoAomjgTrqlkGEJFG);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent
+    }
+.hero-gradient {
+    background: linear-gradient(180deg, rgba(10, 12, 16, 0.2) 0%, rgba(10, 12, 16, 1) 100%)
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+<div class="fixed inset-0 grain-overlay z-50"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-40 border-b border-white/10 bg-background-dark/80 backdrop-blur-md px-6 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary scale-125">sports_basketball</span>
+<span class="font-extrabold text-xl tracking-tighter uppercase">Ball In Seven</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="user_quest_panel.html">Mission</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="schedule_user.html">Events</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="user_quest_panel.html">Content</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="inventory.html">Shop</a>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-bold text-xs uppercase tracking-widest transition-all">
+                Join Movement
+            </button>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-end justify-start pt-20 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-60 grayscale scale-105" data-alt="Cinematic wide shot of an urban streetball court in Lyon at dusk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDySTtFkN7CQ3qbewi98Snpuc_mfDaWEAePCWES_zNb8QRMUeHiCjZoba4sOg0Ca539jSTBIyBdCIHeInP_PJodTuVhYSzrQpyyK98FYHeuXydOBtyrSfHHKFS_KC06ruVaTSF-4Peu-xzDQbMgXeYYtyt6-00F8T9bf8qaUhGY5GBlapBNtfyx-qblWJDSBy6gA9lu4YU5UVhKLcHXXnpoWOVLtl5yDVXdDpAElj8OfPVSoAWp9rRJ6HLc1KDne0kY76aj0UXs_IRB');">
+</div>
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="relative z-20 w-full px-6 pb-20 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="text-primary font-black uppercase tracking-[0.3em] text-sm mb-4">Lyon 7 / District 07</span>
+<h1 class="text-[12vw] md:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase -ml-1 md:-ml-2">
+                        Ball <br>
+<span class="text-stroke">In Seven</span>
+</h1>
+<div class="flex flex-col md:flex-row md:items-center gap-8 mt-10">
+<p class="max-w-md text-slate-400 font-medium leading-relaxed">
+                            A dynamic streetball collective pushing boundaries in the heart of Lyon. Raw energy, absolute inclusion, and the future of urban sport.
+                        </p>
+<div class="flex gap-4">
+<div class="size-16 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-[10px] uppercase tracking-widest font-bold text-white/40">Watch</span>
+<span class="text-sm font-bold">2024 Season Film</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Mission -->
+<section class="py-32 px-6 bg-background-dark relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-4 sticky top-32">
+<h2 class="text-5xl font-black uppercase tracking-tighter mb-6">Our<br><span class="text-primary">Manifesto</span></h2>
+<p class="text-slate-400">Streetball is more than a game. It's a platform for change. We built this for the dreamers and the grinders.</p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-white/5 border border-white/10 rounded-xl hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">groups</span>
+<h3 class="text-2xl font-bold uppercase mb-4">Total Inclusion</h3>
+<p class="text-slate-400 text-sm leading-loose">No tryouts, no barriers. Whether you're a pro or just picking up the rock, the court in Lyon 7 is your home. Diversity isn't just a goal; it's our foundation.</p>
+</div>
+<div class="p-8 bg-white/5 border border-white/10 rounded-xl hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">public</span>
+<h3 class="text-2xl font-bold uppercase mb-4">Urban Culture</h3>
+<p class="text-slate-400 text-sm leading-loose">Fusing basketball with music, fashion, and digital art. We represent the multi-cultural fabric of our neighborhood through every jump shot and highlight reel.</p>
+</div>
+<div class="p-8 bg-white/5 border border-white/10 rounded-xl hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">bolt</span>
+<h3 class="text-2xl font-bold uppercase mb-4">Next Gen Spirit</h3>
+<p class="text-slate-400 text-sm leading-loose">Bridging the gap between the playground and the digital world. Content creators, athletes, and community leaders working together.</p>
+</div>
+<div class="p-8 bg-primary rounded-xl text-white">
+<h3 class="text-2xl font-bold uppercase mb-4">Join Us</h3>
+<p class="text-white/80 text-sm mb-6">Ready to hit the court? Get involved in our next session.</p>
+<button class="w-full py-4 bg-background-dark font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-black transition-colors">Get the Invite</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Grid -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary font-bold uppercase tracking-widest text-xs">The Calendar</span>
+<h2 class="text-6xl font-black uppercase tracking-tighter mt-2">Upcoming<br>Drops</h2>
+</div>
+<button class="border border-white/20 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all">View All Events</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Event Card 1 -->
+<div class="group relative aspect-[4/5] md:aspect-video rounded-xl overflow-hidden bg-zinc-900 border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60" data-alt="Intense basketball action under dramatic stadium lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1YestmZbgX23av8mDYqM4QlXvjQ8ZajYxBur3mOiLGir3wfdcuRqR3XM1m_SiO_rTpbawVLRA96sX8xUC0fhgK6N9tHtpgbWQUsOEnYp_zpcsQwbuQ_ZYwJ7OPGicn0AZ60-FMpoL9TVI6PcYFZuvi4ZWLTcJRAKcYsn0O95Qdcwhd7fhxl_i2W4N138gyNOwmKIfeDgSqIXp7VIPF0GY_l2oqVSB7YY3HtUzRIL6rR4OOBM6NIuWxEiPggKneQ5RsegvYvT9REe5">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest mb-4 inline-block">Tournament</span>
+<h3 class="text-4xl font-black uppercase tracking-tighter">Summer Slam '24</h3>
+<p class="text-slate-300 mt-2 font-medium">July 15-20 | Place Jean Macé</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group relative aspect-[4/5] md:aspect-video rounded-xl overflow-hidden bg-zinc-900 border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-60" data-alt="DJs performing at a high-energy urban outdoor event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG2fLm6GRXp8A0CdyP96jd5NBka09O7UlarNvSD62klGlZdFBPhRPf6Ib_chf1gEtX97AnpmEH7-Mw3ceOeSzP48nHyQQtVvkztkp3OeJGqIFoUzeawoVcjulfdbQnqJL00oAsS1OfVnBJYoHJuiDpkr2HEUELtE3yXkV3Z8Tn1UH4zmQd5Yq4o9U_U3TAPvxwCMCogvbSMCQWU935tNL0bWbkgsBvzgGCh7kxWvvUzZggRDrQkqdT09goLivuEpnwSVOn1zt0TcKg">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="bg-accent text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest mb-4 inline-block">Live Music</span>
+<h3 class="text-4xl font-black uppercase tracking-tighter">Hip-Hop Sessions</h3>
+<p class="text-slate-300 mt-2 font-medium">August 05 | Gerland Park</p>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Section -->
+<section class="py-32 bg-background-light dark:bg-background-dark/50 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-1">
+<h2 class="text-4xl font-black uppercase tracking-tighter mb-8 italic">LATEST<br>CONTENT</h2>
+<div class="space-y-8">
+<div class="flex gap-4 items-start group cursor-pointer">
+<div class="size-20 rounded bg-primary/20 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up of a professional studio microphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8tS3h_6XNqJ2dxnlTcOJ1rjtL8GspktbseJ4cRMSOBlPyVLkoyPlCxQ5ooAMfzCObfm5ghFSPsIjYNk0q93gk1zp2F7iPhY7jWo4qZhhy60lya3qDVWoJkLPcYhgpZ_RzvNGZzFwixb0iKxYRYdq1Ei2t1fFke78SrrUKH5BEbRYE_j5saQ_xWVgBmir5uVNsbRcRilGaN2WGrKzu2ORTvW8MkkVjdeEdp3aCNhba263GtBcweaxANd0dEwhTsS267wwG-9vSKJfy">
+</div>
+<div>
+<h4 class="font-bold uppercase text-sm leading-tight group-hover:text-primary transition-colors">The 7th Court Podcast: Episode 42</h4>
+<p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-widest">Podcasts • 45 min</p>
+</div>
+</div>
+<div class="flex gap-4 items-start group cursor-pointer">
+<div class="size-20 rounded bg-primary/20 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Sound mixing console in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xMLrGGkqQ1YjoecPkG8SrI-anuaTjhonw2O-XDtc6LQPFPu_Ni_dRQvgzW_7IBp4Ssk8ERUhDF2btGz-Ee5xB97e9iLSCOa0yrFr8WEofL5bAsHK1V1i6o4z5esiS1R-IhPU01W2p3XU8kosIAYHZnhjR_ii86qKq4hlqC-4jSZ82YTqxAQW31hDvJFy7flQ2ZUcnY1B4zh-s__nyZd4OZ0ydyHB9eBPL6raQ1FlcI9cSKep3dUs1BzDMDinfhCsfM30zo7iqr7J">
+</div>
+<div>
+<h4 class="font-bold uppercase text-sm leading-tight group-hover:text-primary transition-colors">Lyon Street Highlights: July Week 2</h4>
+<p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-widest">Videos • 12 min</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden brutalist-border">
+<img class="w-full h-full object-cover" data-alt="Atmospheric urban shot of a basketball hoop against a sunset sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMk7yxWsbvNowd0EFNwRwhRADCcXS3bYGbMCRymUqWFrdJxvge9H7yKumkWHIUCE8Uyz-jKjvyxCPyNO9aw2N8Fi27LDAIUGrJxST7MhedfORRQ1i7EeQdZLtruY_RXSjSKExFmfRCzkIqr86TN82BtLH0WpEc_GCeiW48IRFRgN1MDSBZW2cxk-bm0lUGBfuc0LHzkyYGZc8iiaijiRZ2TspixivwosmnT-OyP0LlYTwG_NLps0dVqa9JD5AYxtNKXgwpX5W31yv5">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="size-24 rounded-full bg-primary/90 text-white flex items-center justify-center cursor-pointer hover:scale-110 transition-transform backdrop-blur-sm">
+<span class="material-symbols-outlined text-5xl">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-center text-white">
+<span class="font-black uppercase tracking-[0.2em] text-xs">Featured: Beyond the Paint</span>
+<span class="text-xs font-bold bg-black/50 px-2 py-1 rounded">LIVE NOW</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Footer CTA -->
+<section class="py-24 px-6 border-t border-white/5">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-10">Stay In<br><span class="text-primary">The Loop</span></h2>
+<div class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-white/5 border border-white/10 rounded-lg px-6 py-4 font-bold text-xs tracking-widest focus:border-primary focus:ring-0 outline-none transition-all" placeholder="YOUR EMAIL ADDRESS" type="email">
+<button class="bg-primary text-white font-black px-10 py-4 rounded-lg uppercase tracking-widest text-xs hover:bg-primary/80 transition-all">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark py-12 px-6 border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 grayscale opacity-50">
+<span class="material-symbols-outlined text-primary scale-125">sports_basketball</span>
+<span class="font-extrabold text-lg tracking-tighter uppercase">Ball In Seven</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-white transition-colors uppercase font-bold text-[10px] tracking-widest" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a class="text-slate-500 hover:text-white transition-colors uppercase font-bold text-[10px] tracking-widest" href="https://open.spotify.com" target="_blank" rel="noopener noreferrer">Spotify</a>
+<a class="text-slate-500 hover:text-white transition-colors uppercase font-bold text-[10px] tracking-widest" href="https://youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a>
+<a class="text-slate-500 hover:text-white transition-colors uppercase font-bold text-[10px] tracking-widest" href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+</div>
+<p class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">© 2024 Lyon Street Culture</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LYON07 // GM_CORE_V1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../stylesheets/application.css" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #111318;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.05;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0 0 #3691ff;
+        }
+        .monospace {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(168, 200, 255, 0.1);
+            position: absolute;
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #414753; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#c1c6d5",
+                      "on-background": "#e2e2e8",
+                      "tertiary-fixed-dim": "#ffb68c",
+                      "tertiary-container": "#e47019",
+                      "stroke-white": "rgba(255, 255, 255, 0.3)",
+                      "primary-fixed": "#d5e3ff",
+                      "on-secondary-fixed-variant": "#7a3000",
+                      "on-primary": "#003061",
+                      "outline": "#8b919f",
+                      "error-container": "#93000a",
+                      "inverse-primary": "#005eb4",
+                      "on-tertiary-fixed": "#321200",
+                      "error": "#ffb4ab",
+                      "tertiary": "#ffb68c",
+                      "surface-tint": "#a8c8ff",
+                      "surface-container-highest": "#333539",
+                      "surface-container": "#1e2024",
+                      "primary": "#a8c8ff",
+                      "on-primary-container": "#002955",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e2e2e8",
+                      "on-primary-fixed-variant": "#004689",
+                      "inverse-on-surface": "#2f3035",
+                      "surface-container-lowest": "#0c0e12",
+                      "surface-container-low": "#1a1c20",
+                      "on-surface": "#e2e2e8",
+                      "outline-variant": "#414753",
+                      "on-secondary": "#561f00",
+                      "secondary": "#ffb693",
+                      "surface-dim": "#111318",
+                      "on-tertiary-container": "#481d00",
+                      "surface": "#111318",
+                      "secondary-fixed": "#ffdbcc",
+                      "on-tertiary": "#532200",
+                      "secondary-container": "#fe6b00",
+                      "on-secondary-container": "#572000",
+                      "on-secondary-fixed": "#351000",
+                      "on-tertiary-fixed-variant": "#753400",
+                      "background": "#111318",
+                      "secondary-fixed-dim": "#ffb693",
+                      "surface-card": "rgba(255, 255, 255, 0.05)",
+                      "tertiary-fixed": "#ffdbc9",
+                      "surface-variant": "#333539",
+                      "text-muted": "#94a3b8",
+                      "surface-container-high": "#282a2e",
+                      "primary-fixed-dim": "#a8c8ff",
+                      "primary-container": "#3691ff",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#001b3c",
+                      "surface-bright": "#37393e",
+                      "border-muted": "rgba(255, 255, 255, 0.1)"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "1.5rem",
+                      "container-max": "80rem",
+                      "section-padding": "8rem",
+                      "margin-safe": "1.5rem"
+              },
+              "fontFamily": {
+                      "display-hero-mobile": ["Plus Jakarta Sans"],
+                      "display-hero": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-base": ["Plus Jakarta Sans"],
+                      "label-xs": ["Plus Jakarta Sans"],
+                      "label-bold": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "display-hero-mobile": ["12vw", {"lineHeight": "0.85", "letterSpacing": "-0.05em", "fontWeight": "900"}],
+                      "display-hero": ["10rem", {"lineHeight": "0.85", "letterSpacing": "-0.05em", "fontWeight": "900"}],
+                      "headline-xl": ["3.75rem", {"lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "headline-md": ["1.5rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-base": ["0.875rem", {"lineHeight": "1.625", "fontWeight": "500"}],
+                      "label-xs": ["10px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "label-bold": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.3em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-background/80 border-b border-white/10 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<div class="text-headline-md font-headline-xl font-black uppercase tracking-tighter text-primary">LYON07_COMMAND_CORE</div>
+<div class="hidden md:flex items-center bg-white/5 border border-white/10 px-4 py-1 gap-3">
+<span class="material-symbols-outlined text-primary text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-xs monospace w-64 uppercase" placeholder="SEARCH_SYSTEM_RESOURCES..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-white/5 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">notifications_active</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-white/5 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-white/5 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-bold px-6 py-2 uppercase tracking-widest active:scale-95 duration-100">
+                GO_LIVE
+            </button>
+<div class="w-8 h-8 bg-surface-container-highest overflow-hidden">
+<img alt="GM Admin Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiHq9EaafztCbuB8Eo7rrPNoY-8DTa8XwR3yywVNOsWX5bLjx4FFPluv2oK8zFxDWd2yjNpw6udglIsMBOCf5wMTCRQkoQYgYMyfj1zvtzgBiglF6vnbv-m6gHL_YCse14_wDDTHknfdR3-9pkOiNB84KB7e1YHMlmpVyqRzuHQz-OBOOSjLc3E-TXnNK27RWe7QsV6ByMazbgoq0D1ErRyvbURP0w9MU0rCRccoPZ2rrbYhhgkzCE5i-y88GaB4tZRsibNLDc02Rz"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-surface-container-low border-r border-white/10 flex flex-col justify-between py-6 z-40">
+<div>
+<div class="px-6 mb-8">
+<div class="text-primary font-black tracking-widest text-headline-md">GM_CONSOLE_V1</div>
+<div class="text-on-surface-variant font-label-xs mt-1 uppercase tracking-tighter opacity-60">District 07 Protocol</div>
+</div>
+<nav class="flex flex-col gap-1">
+<!-- Quests (Inactive) -->
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3 transition-all hover:text-primary" href="quest_panel_commande.html">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-bold uppercase">Quests</span>
+</a>
+<!-- Dashboard (Active logic mapping: NPCs for GM Dashboard context) -->
+<a class="flex items-center gap-4 text-primary bg-primary/10 border-r-4 border-primary px-4 py-3 translate-x-1 transition-transform" href="game_master_commande.html">
+<span class="material-symbols-outlined" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-label-bold uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3 transition-all hover:text-primary" href="hystory_npc.html">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-bold uppercase">NPCs</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3 transition-all hover:text-primary" href="hystory_panel.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold uppercase">Items/Shop</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3 transition-all hover:text-primary" href="hystory_panel.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold uppercase">Assets</span>
+</a>
+</nav>
+<div class="mt-8 px-4">
+<button class="w-full bg-white/5 border border-white/10 py-3 text-primary font-label-bold uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-colors">
+                    NEW_INSTANCE
+                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3" href="../../../documentation/testing_strategy.md">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-bold uppercase">Support</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 px-4 py-3" href="hystory_panel.html">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-label-bold uppercase">Logs</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-8 pb-16 min-h-screen">
+<!-- Dashboard Header -->
+<header class="mb-12">
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline-xl text-headline-xl uppercase text-on-background">Command_Center</h1>
+<p class="monospace text-primary mt-2 uppercase tracking-widest text-sm">Session: /gm/dashboard // Protocol_Active</p>
+</div>
+<div class="flex gap-4 mb-2">
+<div class="px-4 py-2 border border-white/10 bg-white/5 monospace text-xs text-on-surface-variant">
+                        SYSTEM_UPTIME: 452:12:08
+                    </div>
+<div class="px-4 py-2 border border-primary/30 bg-primary/10 monospace text-xs text-primary animate-pulse">
+                        CONNECTION: STABLE_DISTRICT_07
+                    </div>
+</div>
+</div>
+</header>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="bg-surface-container border border-white/10 p-6 relative overflow-hidden group hover:border-primary transition-colors">
+<div class="scanline"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="text-label-xs monospace text-on-surface-variant uppercase">Total Ballers</span>
+</div>
+<div class="font-headline-xl text-4xl mb-1 text-on-background">12,842</div>
+<div class="text-xs monospace text-primary">+4.2% FROM_PREVIOUS_LOG</div>
+</div>
+<div class="bg-surface-container border border-white/10 p-6 relative overflow-hidden group hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+<span class="text-label-xs monospace text-on-surface-variant uppercase">Active Instances</span>
+</div>
+<div class="font-headline-xl text-4xl mb-1 text-on-background">158</div>
+<div class="text-xs monospace text-secondary">LOAD_FACTOR: 78%</div>
+</div>
+<div class="bg-surface-container border border-white/10 p-6 relative overflow-hidden group hover:border-primary transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<span class="text-label-xs monospace text-on-surface-variant uppercase">Daily XP Gen</span>
+</div>
+<div class="font-headline-xl text-4xl mb-1 text-on-background">4.8M</div>
+<div class="text-xs monospace text-primary">SPIKE_DETECTED: ZONE_C</div>
+</div>
+</section>
+<!-- Bento Grid Main -->
+<section class="grid grid-cols-12 gap-6">
+<!-- Server Health Monitor -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container border border-white/10 p-6 relative">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-bold uppercase tracking-[0.3em] text-on-surface">Server Health Monitor</h3>
+<div class="flex gap-4">
+<span class="flex items-center gap-2 text-[10px] monospace text-primary">
+<span class="w-2 h-2 bg-primary"></span> CPU_LOAD
+                        </span>
+<span class="flex items-center gap-2 text-[10px] monospace text-secondary">
+<span class="w-2 h-2 bg-secondary"></span> LATENCY
+                        </span>
+</div>
+</div>
+<div class="h-64 flex items-end gap-1 px-2 mb-4">
+<!-- Fake Graph Bars -->
+<div class="flex-1 bg-primary/20 h-[40%] hover:bg-primary transition-colors cursor-help" title="CPU: 40%"></div>
+<div class="flex-1 bg-primary/20 h-[45%] hover:bg-primary transition-colors cursor-help" title="CPU: 45%"></div>
+<div class="flex-1 bg-primary/20 h-[38%] hover:bg-primary transition-colors cursor-help" title="CPU: 38%"></div>
+<div class="flex-1 bg-primary/20 h-[60%] hover:bg-primary transition-colors cursor-help" title="CPU: 60%"></div>
+<div class="flex-1 bg-primary/20 h-[75%] hover:bg-primary transition-colors cursor-help" title="CPU: 75%"></div>
+<div class="flex-1 bg-primary/20 h-[82%] hover:bg-primary transition-colors cursor-help" title="CPU: 82%"></div>
+<div class="flex-1 bg-primary/20 h-[50%] hover:bg-primary transition-colors cursor-help" title="CPU: 50%"></div>
+<div class="flex-1 bg-primary/20 h-[42%] hover:bg-primary transition-colors cursor-help" title="CPU: 42%"></div>
+<div class="flex-1 bg-primary/20 h-[30%] hover:bg-primary transition-colors cursor-help" title="CPU: 30%"></div>
+<div class="flex-1 bg-primary/20 h-[55%] hover:bg-primary transition-colors cursor-help" title="CPU: 55%"></div>
+<div class="flex-1 bg-primary/20 h-[90%] hover:bg-primary transition-colors cursor-help" title="CPU: 90%"></div>
+<div class="flex-1 bg-primary/20 h-[65%] hover:bg-primary transition-colors cursor-help" title="CPU: 65%"></div>
+<div class="flex-1 bg-primary/20 h-[40%] hover:bg-primary transition-colors cursor-help" title="CPU: 40%"></div>
+<div class="flex-1 bg-primary/20 h-[45%] hover:bg-primary transition-colors cursor-help" title="CPU: 45%"></div>
+<div class="flex-1 bg-primary/20 h-[40%] hover:bg-primary transition-colors cursor-help" title="CPU: 40%"></div>
+<div class="flex-1 bg-primary/20 h-[55%] hover:bg-primary transition-colors cursor-help" title="CPU: 55%"></div>
+<div class="flex-1 bg-primary/20 h-[30%] hover:bg-primary transition-colors cursor-help" title="CPU: 30%"></div>
+<div class="flex-1 bg-primary/20 h-[25%] hover:bg-primary transition-colors cursor-help" title="CPU: 25%"></div>
+<div class="flex-1 bg-primary/20 h-[45%] hover:bg-primary transition-colors cursor-help" title="CPU: 45%"></div>
+<div class="flex-1 bg-primary/20 h-[60%] hover:bg-primary transition-colors cursor-help" title="CPU: 60%"></div>
+</div>
+<div class="grid grid-cols-4 border-t border-white/10 pt-4 mt-8">
+<div class="monospace text-center">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">RAM_USAGE</div>
+<div class="text-sm text-primary font-bold">14.2 GB</div>
+</div>
+<div class="monospace text-center border-l border-white/10">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">NETWORK_IN</div>
+<div class="text-sm text-primary font-bold">852 MB/S</div>
+</div>
+<div class="monospace text-center border-l border-white/10">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">DATABASE_IO</div>
+<div class="text-sm text-primary font-bold">1.2 MS</div>
+</div>
+<div class="monospace text-center border-l border-white/10">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">THREADS</div>
+<div class="text-sm text-primary font-bold">1,024</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container border border-white/10 p-6 brutalist-shadow">
+<h3 class="font-label-bold uppercase tracking-[0.3em] text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">bolt</span> Quick_Actions
+                    </h3>
+<div class="grid gap-3">
+<button class="w-full bg-white/5 border border-white/10 py-3 flex items-center justify-between px-4 hover:bg-primary hover:text-on-primary transition-all group">
+<span class="monospace text-xs">SYSTEM_BROADCAST</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">send</span>
+</button>
+<button class="w-full bg-white/5 border border-white/10 py-3 flex items-center justify-between px-4 hover:bg-secondary hover:text-on-secondary transition-all group">
+<span class="monospace text-xs">MAINTENANCE_MODE</span>
+<span class="material-symbols-outlined text-sm">construction</span>
+</button>
+<button class="w-full bg-white/5 border border-white/10 py-3 flex items-center justify-between px-4 hover:bg-error-container hover:text-white transition-all group">
+<span class="monospace text-xs">EMERGENCY_SHUTDOWN</span>
+<span class="material-symbols-outlined text-sm">dangerous</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container border border-white/10 p-6 flex-grow">
+<h3 class="font-label-bold uppercase tracking-[0.3em] text-on-surface mb-4">Patch Status</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">published_with_changes</span>
+</div>
+<div>
+<div class="text-xs font-bold text-on-surface">V1.0.8 // NEON_UPRISING</div>
+<div class="text-[10px] text-on-surface-variant monospace uppercase">Deployed 2h ago</div>
+</div>
+</div>
+<div class="w-full bg-white/10 h-1 mt-2 overflow-hidden">
+<div class="bg-primary h-full w-[100%]"></div>
+</div>
+<div class="text-[10px] monospace text-on-surface-variant uppercase flex justify-between">
+<span>Propagation</span>
+<span>100% COMPLETE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="col-span-12 bg-surface-container-low border border-white/10 overflow-hidden">
+<div class="flex justify-between items-center p-6 border-b border-white/10">
+<h3 class="font-label-bold uppercase tracking-[0.3em] text-on-surface">Live Activity Log</h3>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-2 text-[10px] monospace text-primary">
+<span class="w-2 h-2 bg-primary animate-pulse rounded-full"></span> RECORDING_LIVE
+                        </span>
+<button class="text-xs text-on-surface-variant hover:text-white transition-colors">CLEAR_LOG</button>
+</div>
+</div>
+<div class="max-h-80 overflow-y-auto p-4 space-y-1 monospace text-[11px]">
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:45</span>
+<span class="text-primary shrink-0 uppercase">[QUEST_COMPLETE]</span>
+<span class="text-on-surface flex-grow">Player <span class="text-secondary">@street_shadow_99</span> completed "The District Cleanout".</span>
+<span class="text-on-surface-variant opacity-60">+250 XP / +10 CRED</span>
+</div>
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:41</span>
+<span class="text-secondary shrink-0 uppercase">[ITEM_DROP]</span>
+<span class="text-on-surface flex-grow">NPC "Rogue Dealer" dropped <span class="text-primary">"NEON_BLADE_MK1"</span> in District 07.</span>
+<span class="text-on-surface-variant opacity-60">RARITY: RARE</span>
+</div>
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:35</span>
+<span class="text-error shrink-0 uppercase">[SERVER_WARN]</span>
+<span class="text-on-surface flex-grow">Latency spike in Instance_88 (EU_WEST). Threshold exceeded.</span>
+<span class="text-on-surface-variant opacity-60">PING: 245ms</span>
+</div>
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:30</span>
+<span class="text-primary shrink-0 uppercase">[USER_LOGIN]</span>
+<span class="text-on-surface flex-grow">Master GM <span class="text-secondary">@admin_lyon</span> joined terminal.</span>
+<span class="text-on-surface-variant opacity-60">AUTH: LEVEL_10</span>
+</div>
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:22</span>
+<span class="text-primary shrink-0 uppercase">[QUEST_COMPLETE]</span>
+<span class="text-on-surface flex-grow">Player <span class="text-secondary">@cyber_vandal</span> completed "Tag the Plaza".</span>
+<span class="text-on-surface-variant opacity-60">+120 XP</span>
+</div>
+<div class="flex gap-4 p-2 hover:bg-white/5 group border-b border-white/5 last:border-0">
+<span class="text-on-surface-variant opacity-40 shrink-0">14:02:18</span>
+<span class="text-secondary shrink-0 uppercase">[NPC_RESPAWN]</span>
+<span class="text-on-surface flex-grow">System regenerated 12 "Peacekeepers" in Sector B-4.</span>
+<span class="text-on-surface-variant opacity-60">POOL: DEPLETED</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="fixed bottom-0 left-64 right-0 flex justify-between items-center px-gutter py-2 text-[10px] tracking-[0.2em] uppercase bg-surface-container-lowest border-t border-white/10 z-50">
+<div class="text-on-surface-variant opacity-60">© 2024 LYON_07_URBAN_MMO // GM_CORE</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="game_master_commande.html">System_Status</a>
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="../../../documentation/game_master_routes.md">API_Docs</a>
+<a class="text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="../../../TODO.md">Patch_Notes</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[12px] text-primary">radar</span>
+<span class="text-primary">CORE_STABLE</span>
+</div>
+</footer>
+<script>
+        // Fake real-time updates for graph effect
+        setInterval(() => {
+            const bars = document.querySelectorAll('.h-64 div');
+            bars.forEach(bar => {
+                const currentH = parseInt(bar.style.height || '40%');
+                const change = (Math.random() - 0.5) * 10;
+                const newH = Math.max(10, Math.min(95, currentH + change));
+                bar.style.height = newH + '%';
+            });
+        }, 2000);
+
+        // Simple activity log roll
+        const logContainer = document.querySelector('.max-h-80');
+        setInterval(() => {
+            const lastLog = logContainer.children[Math.floor(Math.random() * logContainer.children.length)];
+            const clone = lastLog.cloneNode(true);
+            const now = new Date();
+            clone.querySelector('.shrink-0').innerText = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            logContainer.prepend(clone);
+            if (logContainer.children.length > 20) {
+                logContainer.lastElementChild.remove();
+            }
+        }, 5000);
+    </script>
+</body></html>
