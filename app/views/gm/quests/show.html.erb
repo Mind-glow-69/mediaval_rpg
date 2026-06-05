@@ -1,0 +1,32 @@
+<div class="p-8 max-w-4xl">
+  <div class="flex items-start justify-between gap-4 mb-6">
+    <div>
+      <h1 class="text-2xl font-black"><%= @quest.title %></h1>
+      <p class="text-sm text-gray-400 mt-2">Détail de la quête</p>
+    </div>
+
+    <div class="flex gap-2">
+      <%= link_to "Éditer", edit_gm_quest_path(@quest), class: "px-4 py-2 bg-indigo-600 text-white rounded" if @quest.persisted? %>
+      <%= link_to "Retour", gm_quests_path, class: "px-4 py-2 border border-white/10 text-gray-200 rounded" %>
+    </div>
+  </div>
+
+  <div class="space-y-4 p-6 bg-gray-800 border border-white/10 rounded">
+    <div>
+      <div class="text-sm text-gray-400 uppercase tracking-wide">Description</div>
+      <div class="mt-2 text-gray-100 whitespace-pre-line"><%= @quest.description.presence || "—" %></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <div class="text-sm text-gray-400 uppercase tracking-wide">XP de récompense</div>
+        <div class="mt-2 text-gray-100"><%= @quest.reward_xp.presence || 0 %></div>
+      </div>
+
+      <div>
+        <div class="text-sm text-gray-400 uppercase tracking-wide">Statut</div>
+        <div class="mt-2 text-gray-100"><%= @quest.published? ? "Publié" : "Brouillon" %></div>
+      </div>
+    </div>
+  </div>
+</div>
