@@ -35,3 +35,4 @@
 /config/master.key
 log/\ntmp/\n*.log\n*.tmp\n
 .agent.md
+TODO.md
